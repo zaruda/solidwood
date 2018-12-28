@@ -1,0 +1,21 @@
+<header>
+  <div>
+    <%= link_to "logo", root_path %>
+  </div>
+  <div>
+    <div class="header_contacts">
+      <%= link_to '+375 29 267 08 78', 'tel:+375292670878' %>
+      <button>Заказать звонок</button>
+    </div>
+    <nav>
+      <ul>
+        <li><%= link_to "О нас", '/about' %></li>
+        <li><%= link_to "Каталог", '/catalog' %></li>
+        <li><%= link_to "Калькулятор объемов", '/calculator' %></li>
+        <li><%= link_to "Новости", news_index_path %></li>
+        <li><%= link_to "Доставка и оплата", '/delivery' %></li>
+      </ul>
+    </nav>
+  </div>
+  header
+</header>
