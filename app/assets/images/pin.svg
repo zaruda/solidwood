@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="9_Контакты" transform="translate(-99.000000, -272.000000)" fill-rule="nonzero">
+            <g id="Group-6" transform="translate(100.000000, 273.000000)">
+                <g id="maps-and-flags-(4)" transform="translate(14.000000, 11.000000)" fill="#3C5B3B">
+                    <path d="M8.5,0 C3.81307469,0 0,3.57423092 0,7.96753315 C0,13.4197585 7.60666731,21.4239441 7.93052792,21.7620226 C8.2347231,22.079605 8.76582698,22.0790464 9.06947208,21.7620226 C9.39333269,21.4239441 17,13.4197585 17,7.96753315 C16.9999083,3.57423092 13.1868795,0 8.5,0 Z M8.5,11.9762216 C6.14189142,11.9762216 4.22348148,10.1779343 4.22348148,7.96753315 C4.22348148,5.75713202 6.14193726,3.95888764 8.5,3.95888764 C10.8580627,3.95888764 12.7764727,5.75717498 12.7764727,7.96757612 C12.7764727,10.1779772 10.8580627,11.9762216 8.5,11.9762216 Z" id="Shape"></path>
+                </g>
+                <circle id="Oval" stroke="#3C5B3B" cx="22.5" cy="22.5" r="22.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

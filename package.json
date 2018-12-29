@@ -1,5 +1,6 @@
 {
   "name": "solidwood",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+  }
 }
