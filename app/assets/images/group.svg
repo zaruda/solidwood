@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="149" viewBox="0 0 130 149">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#263C26" fill-rule="nonzero" d="M30.5 125C47.345 125 61 111.358 61 94.529 61 83.309 50.833 59.8 30.5 24 10.167 59.8 0 83.31 0 94.529 0 111.358 13.655 125 30.5 125zM99.5 125C82.655 125 69 111.358 69 94.529 69 83.309 79.167 59.8 99.5 24 119.833 59.8 130 83.31 130 94.529 130 111.358 116.345 125 99.5 125z"/>
+        <path fill="#3C5B3B" fill-rule="nonzero" stroke="#F6F6F6" stroke-width="4" d="M65 109.314v17.746l-2.112-.12C43.357 125.84 28 109.649 28 90c0-13.374 11.74-40.548 35.26-81.999L65 4.936 66.74 8C90.26 49.452 102 76.626 102 90c0 19.648-15.357 35.84-34.888 36.94l-2.112.12v-17.746z"/>
+        <text fill="#3C5B3B" font-family="Gilroy-Semibold, Gilroy" font-size="20" font-weight="500" letter-spacing=".363" transform="translate(0 8)">
+            <tspan x="17" y="137">СолидВуд</tspan>
+        </text>
+    </g>
+</svg>

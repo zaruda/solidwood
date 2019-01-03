@@ -1,0 +1,25 @@
+<br>
+<br>
+<div class="container">
+  <div class="tabs">
+    <ul>
+      <li class="is-active"><%= link_to 'Продукция', '/catalog/product' %></li>
+      <li><%= link_to 'Услуги', '/catalog/service' %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <br>
+  <div class="columns">
+    <% @products.each do |product| %>
+      <div class="column">
+        <%= render "products/product_card", product: product, order_item: @order_item %>
+
+        <%#= render "product_row", product: product, order_item: @order_item %>
+      </div>
+    <% end %>
+  </div>
+  <div class="spacer"></div>
+</div>

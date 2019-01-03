@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+
 <p>
   <strong>Title:</strong>
   <%= @news.title %>
@@ -12,7 +14,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @news.body %>
+  <%= raw(@news.body) %>
 </p>
 
 <p>
@@ -22,3 +24,4 @@
 
 <!--<%#= link_to 'Edit', edit_news_path(@news) %> |-->
 <%= link_to 'Back', news_index_path %>
+</div>

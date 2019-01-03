@@ -1,0 +1,13 @@
+// Extend/Inheritance (use with @extend)
+
+%button {
+  border: none;
+  border-radius: 6px;
+  padding: 15px 30px;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom, #ffe6ab, #c0a269);
+}
+
+%d-flex {
+  display: flex;
+}

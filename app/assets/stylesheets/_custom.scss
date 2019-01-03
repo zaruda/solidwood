@@ -1,0 +1,36 @@
+a.box:hover, a.box:focus {
+  box-shadow: none;
+}
+
+.box {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.tile {
+  p {
+    font-size: 1.5rem;
+    line-height: 36px;
+  }
+  &.is-ancestor {
+    margin: 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &.is-parent {
+    padding: 0;
+  }
+  &.is-bordered {
+    border-left: 1px solid #d8d8d8;
+    > div {
+      &:not(:last-child) {
+        border-bottom: 1px solid #d8d8d8;
+      }
+    }
+  }
+}
+
+.spacer {
+  padding: 6rem 0;
+}

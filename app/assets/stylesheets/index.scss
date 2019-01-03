@@ -1,7 +1,28 @@
 // Place all the styles related to the Index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
 
-header {
+.hero {
+  background-image: url(head_banner.png);
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  text-align: center;
+  &-body {
+    padding: 11rem 0 !important;
+  }
 
+}
+
+.withHeader {
+  padding-top: 130px;
+}
+
+.button {
+  @extend %button;
+
+  &.green {
+    background-image: linear-gradient(to bottom, #6f946d, #3c5b3b);
+    color: #fff;
+  }
 }

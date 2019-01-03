@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 #
 gem 'activeadmin', '~> 1.4', '>= 1.4.3'
 gem "active_material", github: "vigetlabs/active_material"
+gem 'babosa', '~> 1.0', '>= 1.0.2'
 gem 'bulma-rails', '~> 0.7.2'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'devise', '~> 4.5'

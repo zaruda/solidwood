@@ -2,25 +2,30 @@
 <html>
   <head>
     <title>Solidwood</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <meta property="og:type" content="website">
+    <meta name="referrer" content="always">
+    <meta name="theme-color" content="#ffffff">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <% if request.ssl? %>
-      <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-      <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-    <% else %>
-      <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-      <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-    <% end %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'partials/header' %>
 
-    <h4 class="cart-text"><%= render 'layouts/cart_text' %></h4>
+    <main class="<%= current_page?(root_path) ? nil : 'withHeader'%>">
+      <%= yield %>
+    </main>
 
+    <%= render 'partials/footer' %>
 
-    <%= yield %>
   </body>
 </html>

@@ -1,3 +1,48 @@
 // Place all the styles related to the News controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+.newsPreviewBlock {
+  .type {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: $gray;
+    font-size: 0.8rem;
+    font-weight: 500;
+    &.red {
+      color: $red;
+    }
+  }
+  .title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+
+.news {
+  &List {
+
+    &Preview {
+      display: flex;
+      padding: 2rem 0;
+      &:not(:last-child) {
+        border-bottom: 1px solid #d8d8d8;
+      }
+      .type,
+      .published {
+        text-transform: uppercase;
+        color: $gray;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-right: 20px;
+        &.red {
+          color: $red;
+        }
+      }
+    }
+  }
+}

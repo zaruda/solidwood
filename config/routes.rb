@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   root 'index#index', controller: IndexController
 
   get '/about' => 'pages#about'
-  get '/catalog' => 'pages#catalog'
+
+  # get '/catalog' => 'catalog#index'
+  get '/catalog/:filter' => 'catalog#index'
 
   resources :news, only: [:index, :show]
-  resources :products, only: :index
+  resources :products, only: [:index, :show]
+  resources :catalog, only: :index
   resource :cart, only: :show
   resources :order_items, only: [:create, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

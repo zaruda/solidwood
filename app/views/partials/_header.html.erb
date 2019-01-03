@@ -1,21 +1,30 @@
-<header>
-  <div>
-    <%= link_to "logo", root_path %>
-  </div>
-  <div>
-    <div class="header_contacts">
-      <%= link_to '+375 29 267 08 78', 'tel:+375292670878' %>
-      <button>Заказать звонок</button>
+<header class="<%= current_page?(root_path) ? 'header' : 'header withBg' %>">
+  <div class="container">
+    <div>
+      <%= link_to root_path do %>
+        <%= image_tag "logo_header.svg", class: "" %>
+      <% end %>
     </div>
-    <nav>
-      <ul>
-        <li><%= link_to "О нас", '/about' %></li>
-        <li><%= link_to "Каталог", '/catalog' %></li>
-        <li><%= link_to "Калькулятор объемов", '/calculator' %></li>
-        <li><%= link_to "Новости", news_index_path %></li>
-        <li><%= link_to "Доставка и оплата", '/delivery' %></li>
-      </ul>
-    </nav>
+    <div>
+      <div class="headerContacts">
+        <%= link_to '+375 29 267 08 78', 'tel:+375292670878' %>
+        <button>Заказать звонок</button>
+        <div class="basketContainer"><%= render 'layouts/cart_text' %></div>
+      </div>
+      <nav class="headerNav">
+        <ul class="headerNavMenu">
+          <li class="headerNavMenuItem"><%= link_to "О нас", '/about' %></li>
+          <li class="headerNavMenuItem"><%= link_to "Каталог", catalog_index_path %></li>
+          <li class="headerNavMenuItem"><%= link_to "Калькулятор объемов", '/calculator' %></li>
+          <li class="headerNavMenuItem"><%= link_to "Новости", news_index_path %></li>
+          <li class="headerNavMenuItem"><%= link_to "Доставка и оплата", '/delivery' %></li>
+        </ul>
+      </nav>
+    </div>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
-  header
 </header>

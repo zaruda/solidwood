@@ -1,0 +1,8 @@
+<%= link_to news_path(news), class: "tile is-child box newsPreviewBlock" do %>
+  <div class="<%= news.news_type === 'Акция' ? 'type red' : 'type' %>">
+    <%= news.news_type %>
+  </div>
+  <p class="title">
+    <%= news.title %>
+  </p>
+<% end %>

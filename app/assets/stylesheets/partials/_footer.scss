@@ -1,0 +1,52 @@
+@import "variables";
+@import "mixins";
+
+footer {
+  padding: 2rem 0;
+  background-color: $gray-light;
+  @media (max-width: $screen-mobile) {
+    padding: 2rem;
+    text-align: center;
+  }
+  .container {
+    @extend %d-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $screen-mobile) {
+      flex-direction: column;
+    }
+    .footerRequisites {
+      display: flex;
+      align-items: center;
+      @media (max-width: $screen-mobile) {
+        flex-direction: column;
+      }
+      > .address {
+        margin-left: 3rem;
+        @media (max-width: $screen-mobile) {
+          margin-left: 0;
+        }
+        a {
+          display: inline-block;
+          margin-top: 15px;
+          &:not(:last-child) {
+            margin-right: 1.5rem  ;
+          }
+        }
+      }
+    }
+    .footerContacts {
+      text-align: right;
+      @media (max-width: $screen-mobile) {
+        text-align: center;
+      }
+      a {
+        display: block;
+      }
+      .phone {
+        font-size: 2rem;
+      }
+    }
+  }
+}
