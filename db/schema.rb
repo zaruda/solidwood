@@ -175,20 +175,9 @@ ActiveRecord::Schema.define(version: 2019_01_14_111813) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "type_properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "property_id"
-    t.bigint "product_type_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_type_id"], name: "index_type_properties_on_product_type_id"
-    t.index ["property_id"], name: "index_type_properties_on_property_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "products", "product_types"
-  add_foreign_key "type_properties", "product_types"
-  add_foreign_key "type_properties", "properties"
 end
