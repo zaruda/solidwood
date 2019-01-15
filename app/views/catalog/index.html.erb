@@ -1,25 +1,36 @@
 <br>
 <br>
-<div class="container">
-  <div class="tabs">
-    <ul>
-      <li class="is-active"><%= link_to 'Продукция', '/catalog/product' %></li>
-      <li><%= link_to 'Услуги', '/catalog/service' %></li>
-    </ul>
+
+<div class="border-bottom">
+  <div class="container">
+    <div class="tabs catalogTabs">
+      <ul>
+        <li class=<%= !current_page?('/catalog/service') && 'is-active' %>><%= link_to 'Продукция', '/catalog/product' %></li>
+        <li class=<%= current_page?('/catalog/service') && 'is-active' %>><%= link_to 'Услуги', '/catalog/service' %></li>
+      </ul>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <br>
-  <br>
-  <div class="columns">
-    <% @products.each do |product| %>
-      <div class="column">
-        <%= render "products/product_card", product: product, order_item: @order_item %>
 
-        <%#= render "product_row", product: product, order_item: @order_item %>
-      </div>
-    <% end %>
-  </div>
+<div class="container">
+  <% if current_page?('/catalog/service') %>
+    <div class="serviceList">
+      <% @products.each do |product| %>
+        <%= render "products/service_row", service: product %>
+      <% end %>
+    </div>
+
+    <% else %>
+    <div class="columns">
+      <% @products.each do |product| %>
+        <div class="column">
+          <%= render "products/product_card", product: product, order_item: @order_item %>
+          <%#= render "product_row", product: product, order_item: @order_item %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="spacer"></div>
 </div>

@@ -1,7 +1,12 @@
 class CatalogController < ApplicationController
   def index
-    p params[:filter]
-    @products = Product.all
-    @order_item = current_order.order_items.new
+    # add_breadcrumb "Каталог", catalog_index_path
+
+    @products = if params[:filter] === 'service'
+      Service.all
+    else
+      ProductType.all
+                end
+    # p @products
   end
 end

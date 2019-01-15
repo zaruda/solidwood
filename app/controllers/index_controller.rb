@@ -1,6 +1,10 @@
 class IndexController < ApplicationController
+
+
   def index
-    @news = News.published
-    @products = Product.find(4)
+    # add_breadcrumb "Главная", :root_path
+
+    @news = News.published.limit(3)
+    # @products = Product.find(4)
   end
 end

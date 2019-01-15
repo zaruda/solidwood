@@ -1,0 +1,49 @@
+<div class="container">
+  <br>
+  <br>
+  <h1 class="title">Корзина</h1>
+</div>
+<hr />
+
+<div class="container">
+  <div class="stepper">
+    <div class="step active complete">
+      <%=link_to '1', step1_wizard_path, class: 'circle' %>
+      <!--      <div class="label">Step 1</div>-->
+    </div>
+    <div class="divider"></div>
+    <div class="step active">
+      <div class="circle">2</div>
+      <!--      <div class="label">Step 2</div>-->
+    </div>
+    <div class="divider"></div>
+    <div class="step">
+      <div class="circle">3</div>
+      <!--      <div class="label">Step 3</div>-->
+    </div>
+  </div>
+
+  <br>
+
+
+  <%= form_for @order_wizard, as: :order_wizard, url: validate_step_wizard_path, class: 'orderForm' do |f| %>
+    <%#= f.error_notification %>
+
+    <%= hidden_field_tag :current_step, 'step2' %>
+    <label for="">
+      <span>ФИО:</span>
+      <%= f.text_field :name, placeholder: "ФИО" %>
+    </label>
+    <label for="">
+      <span>E-mail:</span>
+      <%= f.text_field :email, placeholder: "E-mail" %>
+    </label>
+    <label for="">
+      <span>Телефон</span>
+      <%= f.text_field :phone_number, placeholder: "Телефон" %>
+    </label>
+
+    <%= f.submit 'Оформить заказ', class: 'button green' %>
+  <% end %>
+  <div class="spacer-medium"></div>
+</div>

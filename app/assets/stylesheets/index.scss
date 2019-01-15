@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "mixins";
+@import "variables";
 
 .hero {
   background-image: url(head_banner.png);
@@ -15,7 +16,10 @@
 }
 
 .withHeader {
-  padding-top: 130px;
+  padding-top: 140px;
+  @media (max-width: $screen-desktop) {
+    padding-top: 90px;
+  }
 }
 
 .button {

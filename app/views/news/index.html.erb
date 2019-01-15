@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <h1>Новости</h1>
+  <br />
+  <br />
+  <h1 class="title">Новости</h1>
 </div>
 <hr />
 <div class="container">
@@ -11,26 +13,22 @@
         <% @news.each do |news| %>
           <%= link_to news, class: 'newsListPreview' do %>
             <% if news.banner.attached? %>
-              <div class="banner">
-                <%= news.banner %>
+              <div class="newsListPreviewImage" style="background-image: url(<%= news.banner.service_url %>)">
               </div>
             <% end %>
-
             <div>
-              <div>
+              <div class="newsBadges">
                 <span class="<%= news.news_type === 'Акция' ? 'type red' : 'type' %>"> <%= news.news_type %></span>
                 <span class="published"><%= news.published_at.strftime('%d.%m.%Y') %></span>
               </div>
-              <h2><%= news.title %></h2>
-              <%#= raw(news.body) %>
-              <%#= news.published_at.strftime('%d.%m.%Y') %>
+              <p class="title is-4"><%= news.title %></p>
             </div>
           <% end %>
         <% end %>
       </div>
     </div>
     <div class="column">
-      banners
+      <%= render 'partials/banner' %>
     </div>
   </div>
 

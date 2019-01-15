@@ -4,6 +4,13 @@
 
 $(document).on 'turbolinks:load', ->
   header = $('header')
+  $('.button-modal').click ->
+    target = $(this).data('target')
+    $(".modal##{target}").addClass 'is-active'
+
+  $('.modal-close').click ->
+    $(this).parent().removeClass 'is-active'
+
   $(window).scroll ->
     scroll = $(window).scrollTop()
     if scroll >= 100 && !header.hasClass 'withBg'
@@ -12,3 +19,4 @@ $(document).on 'turbolinks:load', ->
       header.removeClass 'white'
     return
   return
+

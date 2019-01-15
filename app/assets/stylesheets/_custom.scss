@@ -1,3 +1,5 @@
+@import "variables";
+
 a.box:hover, a.box:focus {
   box-shadow: none;
 }
@@ -33,4 +35,45 @@ a.box:hover, a.box:focus {
 
 .spacer {
   padding: 6rem 0;
+}
+.spacer-medium {
+  padding: 4rem 0;
+}
+.spacer-small {
+  padding: 2rem 0;
+}
+
+.select {
+  width: 100%;
+  select {
+    width: 100%;
+  }
+}
+
+.navbar-burger {
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #D8D8D8;
+  margin-bottom: 3rem;
+}
+
+.modal {
+  z-index: 999;
+}
+
+.container {
+  @media (max-width: $screen-desktop) {
+    padding: 0 15px;
+  }
 }

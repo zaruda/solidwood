@@ -1,3 +1,68 @@
 // Place all the styles related to the Catalog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.catalog {
+  &Tabs {
+    ul {
+      border-bottom: none;
+      li {
+        &.is-active {
+          a {
+            color: #000;
+            border-bottom-color: #3E5D3D;
+            border-bottom-width: 2px;
+          }
+        }
+        a {
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: #969696;
+          margin-bottom: 0;
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+}
+
+.serviceList {
+  &Item {
+    display: flex;
+    padding: 0 0 2rem;
+    &:not(:first-child) {
+      padding: 2rem 0;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid #D8D8D8;
+    }
+    img {
+      max-width: 300px;
+      max-height: 200px;
+      border-radius: 5px;
+      @media (max-width: $screen-mobile) {
+        display: none;
+      }
+    }
+    .content {
+      margin-left: 3rem;
+      @media (max-width: $screen-mobile) {
+        margin-left: 0;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .title.is-4 {
+        color: #075681;
+      }
+      .description {
+        font-size: 1.3rem;
+      }
+      .price {
+        color: #3C5B3B;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

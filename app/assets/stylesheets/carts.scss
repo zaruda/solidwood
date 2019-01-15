@@ -1,3 +1,116 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.stepper {
+  display: flex;
+  clear: both;
+  margin: 20px;
+
+  .step {
+    float: left;
+    font-size: 15px;
+    margin: 0 12px;
+  }
+
+  .divider {
+    border-bottom: 1px solid #cfcfcf;
+    float: left;
+    height: 20px;
+    margin: 0 12px;
+    width: 45px;
+  }
+
+  .circle{
+    background: #cfcfcf;
+    border-radius: 50%;
+    color: #ffffff;
+    float: left;
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+  }
+
+  .label {
+    color: #cfcfcf;
+    float: left;
+    line-height: 24px;
+    margin-left: 8px;
+  }
+
+  .active{
+    .circle{ background: #3C5B3B; }
+    .label{ color: #5b5b5b; font-weight: 400; }
+  }
+
+  .complete{
+    .circle{ background: #3C5B3B; }
+    .icon{ font-size: 30px; position: relative; top: -3px; }
+    .label{ color: #5b5b5b; font-weight: 400; }
+  }
+}
+
+.button-delete {
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-image: asset-url('delete.svg');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  outline: none;
+
+}
+
+.button-refresh {
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-right: 15px;
+  > img {
+
+    width: 25px;
+    height: 25px;
+    display: block;
+
+  }
+
+}
+
+
+.new_order_wizard {
+  label {
+    display: block;
+    margin-bottom: 20px;
+    span {
+      display: block;
+      font-size: 0.9rem;
+    }
+    input {
+      display: block;
+      border: 1px solid #979797;
+      border-radius: 5px;
+      padding: 10px 15px;
+      max-width: 400px;
+      width: 100%;
+      transition: border-color 0.15s ease-in-out;
+      outline: none;
+      &:focus,
+      &:active {
+        border-color: #3E5E3D;
+      }
+
+    }
+  }
+  .field_with_errors {
+    display: block;
+    background-color: transparent;
+    > input {
+      border-color: red;
+    }
+  }
+}

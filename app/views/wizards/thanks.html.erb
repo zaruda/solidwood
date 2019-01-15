@@ -1,0 +1,48 @@
+<div class="container">
+  <br>
+  <br>
+  <h1 class="title">Корзина</h1>
+</div>
+<hr />
+
+<div class="container">
+  <div class="stepper">
+    <div class="step active complete">
+      <%=link_to '1', step1_wizard_path, class: 'circle' %>
+      <!--      <div class="label">Step 1</div>-->
+    </div>
+    <div class="divider"></div>
+    <div class="step active complete">
+      <%=link_to '2', step2_wizard_path, class: 'circle' %>
+      <!--      <div class="label">Step 2</div>-->
+    </div>
+    <div class="divider"></div>
+    <div class="step active">
+      <div class="circle">3</div>
+      <!--      <div class="label">Step 3</div>-->
+    </div>
+  </div>
+
+  <br>
+
+  <p>
+    Спасибо, что выбрали нас! Наши специалисты свяжуться с Вами в ближайшее время.
+  </p>
+  <br>
+  <%= link_to 'На главную', root_path, class: 'button green' %>
+
+  <div class="spacer"></div>
+  <div class="spacer-small"></div>
+
+  <%#= simple_form_for @order_wizard, as: :order_wizard, url: validate_step_wizard_path do |f| %>
+    <%#= f.error_notification %>
+
+    <%#= hidden_field_tag :current_step, 'step4' %>
+
+    <%#= f.submit 'Finish' %>
+  <%# end %>
+</div>
+
+
+
+

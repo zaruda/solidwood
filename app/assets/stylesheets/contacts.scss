@@ -1,0 +1,13 @@
+.contactList {
+  li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    img {
+      margin-right: 15px;
+    }
+    > div {
+      align-self: center;
+    }
+  }
+}

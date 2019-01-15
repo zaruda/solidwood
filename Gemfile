@@ -33,9 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #
-gem 'activeadmin', '~> 1.4', '>= 1.4.3'
 gem "active_material", github: "vigetlabs/active_material"
+gem 'activeadmin', '~> 1.4', '>= 1.4.3'
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+gem 'aws-sdk-s3', '~> 1.30', '>= 1.30.1'
 gem 'babosa', '~> 1.0', '>= 1.0.2'
+gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'
 gem 'bulma-rails', '~> 0.7.2'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'devise', '~> 4.5'
@@ -43,6 +46,7 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'inherited_resources', '~> 1.9'
 gem 'paperclip', '~> 6.1'
+gem 'simple_form', '~> 4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

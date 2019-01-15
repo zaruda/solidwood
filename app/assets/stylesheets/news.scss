@@ -28,21 +28,44 @@
 
     &Preview {
       display: flex;
-      padding: 2rem 0;
+      padding: 0 0 2rem;
+      &:not(:first-child) {
+        padding: 2rem 0;
+      }
       &:not(:last-child) {
         border-bottom: 1px solid #d8d8d8;
       }
-      .type,
-      .published {
-        text-transform: uppercase;
-        color: $gray;
-        font-size: 0.8rem;
-        font-weight: 500;
-        margin-right: 20px;
-        &.red {
-          color: $red;
+      &Image {
+        width: 270px;
+        height: 180px;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        border-radius: 5px;
+        margin-right: 2rem;
+        img {
+          display: block;
+          max-width: 220px;
+          width: 100%;
         }
       }
+      .title {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+.newsBadges {
+  .type,
+  .published {
+    text-transform: uppercase;
+    color: $gray;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 20px;
+    &.red {
+      color: $red;
     }
   }
 }

@@ -1,0 +1,10 @@
+<div class="serviceListItem">
+  <% if service.image.attached? %>
+    <%= image_tag service.image.service_url, alt: service.name %>
+  <% end %>
+  <div class="content">
+    <p class="title is-4"><%= service.name %></p>
+    <p class="description"><%= service.description %></p>
+    <p class="title is-5 price">Cтоимость: <%= number_to_currency service.price, locale: :by %>/м.п.</p>
+  </div>
+</div>

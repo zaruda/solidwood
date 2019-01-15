@@ -1,27 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
+  <br />
+  <br />
+  <h1 class="title">Новости</h1>
+</div>
+<hr />
 
-<p>
-  <strong>Title:</strong>
-  <%= @news.title %>
-</p>
+<div class="container">
+  <div class="columns">
+    <div class="column is-four-fifths">
+      <% if @news.banner.attached? %>
+        <div class="newsBanner" style="background-image: url(<%= @news.banner.service_url %>)">
+          <%= image_tag @news.banner.service_url %>
+        </div>
+      <% end %>
 
-<p>
-  <strong>Intro:</strong>
-  <%= @news.intro %>
-</p>
+      <div class="newsBadges" style="margin: 15px 0">
+        <span class="<%= @news.news_type === 'Акция' ? 'type red' : 'type' %>"> <%= @news.news_type %></span>
+        <span class="published"><%= @news.published_at.strftime('%d.%m.%Y') %></span>
+      </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= raw(@news.body) %>
-</p>
+      <h1 class="title">
+        <%= @news.title %>
+      </h1>
 
-<p>
-  <strong>Published at:</strong>
-  <%= @news.published_at %>
-</p>
+      <div>
+        <%= raw(@news.body) %>
+      </div>
+    </div>
+    <div class="column">
+      <%= render 'partials/banner' %>
+    </div>
+  </div>
 
-<!--<%#= link_to 'Edit', edit_news_path(@news) %> |-->
-<%= link_to 'Back', news_index_path %>
+
+
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_02_095329) do
+ActiveRecord::Schema.define(version: 2019_01_14_111813) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -121,6 +121,9 @@ ActiveRecord::Schema.define(version: 2019_01_02_095329) do
     t.bigint "order_status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "email"
+    t.string "phone_number"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
   end
 
@@ -132,18 +135,60 @@ ActiveRecord::Schema.define(version: 2019_01_02_095329) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "product_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+    t.decimal "price", precision: 12, scale: 3
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "size"
-    t.string "quality"
     t.decimal "price", precision: 12, scale: 3
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "product_type_id"
+    t.index ["product_type_id"], name: "index_products_on_product_type_id"
+  end
+
+  create_table "products_properties", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "property_id"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_products_properties_on_product_id"
+    t.index ["property_id"], name: "index_products_properties_on_property_id"
+  end
+
+  create_table "properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.decimal "price", precision: 12, scale: 3
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "type_properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "property_id"
+    t.bigint "product_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_type_id"], name: "index_type_properties_on_product_type_id"
+    t.index ["property_id"], name: "index_type_properties_on_property_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "order_statuses"
+  add_foreign_key "products", "product_types"
+  add_foreign_key "type_properties", "product_types"
+  add_foreign_key "type_properties", "properties"
 end

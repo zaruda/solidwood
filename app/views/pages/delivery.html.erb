@@ -1,0 +1,53 @@
+<div class="container">
+  <br>
+  <br>
+  <h1 class="title">Доставка и оплата</h1>
+</div>
+<hr />
+<div class="container">
+  <div class="columns">
+    <div class="column is-four-fifths">
+      <p>
+        При покупке у нас пиломатериала, возможна доставка по Минску и РБ. Подробнее о условиях доставки вы можете узнать по телефону у продавца-консультанта. Посетите страницу контактной информации.
+      </p>
+      <p>
+        Для физлиц ПРИ ЗАКАЗЕ НА СУММУ ОТ 1500 рублей доставка БЕСПЛАТНО в пределах 50 км от склада.
+      </p>
+      <div class="delivery">
+        <h2 class="deliveryTitle">Цена доставки в общем случае:</h2>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <%= image_tag 'delivery1.svg' %>
+            <div>по г. Минску</div>
+            <div class="price"><%= number_to_currency '35-40', locale: :by %> </div>
+          </div>
+          <div class="column has-text-centered">
+            <%= image_tag 'delivery2.svg' %>
+            <div>до 100 км от МКАД</div>
+            <div class="price">70 коп./км</div>
+          </div>
+          <div class="column has-text-centered">
+            <%= image_tag 'delivery3.svg' %>
+            <div>более 100 км от МКАД</div>
+            <div class="price">договорная</div>
+          </div>
+          <div class="column has-text-centered">
+            <%= image_tag 'delivery4.svg' %>
+            <div>самовывоз</div>
+            <div class="price">бесплатно</div>
+          </div>
+        </div>
+      </div>
+      <p>
+        Для физлиц возможна оплата наличными или банковской картой.
+      </p>
+      <p>
+        Для юрлиц оплата по безналу.
+      </p>
+    </div>
+    <div class="column">
+      <%= render 'partials/banner' %>
+    </div>
+  </div>
+  <div class="spacer-small"></div>
+</div>

@@ -18,13 +18,16 @@
       <% @news.each do |news| %>
         <%= render 'news/preview_block', news: news %>
       <% end %>
+      <%=link_to 'Все новости', news_index_path %>
     </div>
     <div class="tile is-vertical is-parent is-bordered">
       <div class="tile is-child box">
         <p>
           В каталоге Вы можете ознакомиться с ассортиментом и ценами на нашу продукцию и услуги.
         </p>
+        <br>
         <%= link_to 'Перейти в каталог', catalog_index_path, class: 'button green' %>
+        <br>
       </div>
       <div class="tile is-child box">
         <p class="title">
@@ -33,6 +36,7 @@
         <p>
           Предлагаем антисептированные изделия, возможность распила по Вашим спецификациям. Работаем на давальческом сырье.
         </p>
+        <br>
       </div>
     </div>
   </div>

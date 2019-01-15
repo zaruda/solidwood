@@ -1,0 +1,13 @@
+.delivery {
+  margin: 2rem 0;
+  &Title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #075681;
+  }
+  .price {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #6CA86C;
+  }
+}

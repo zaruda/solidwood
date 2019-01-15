@@ -2,6 +2,127 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "mixins";
+
+.productTable {
+  thead {
+    background-color: #CAAD73;
+  }
+  .button-card {
+    @extend %button;
+    background-color: #6f946d;
+    background-image: asset-url('basket.svg');
+    -webkit-background-size: 25px;
+    background-size: 25px;
+    background-position: 140px center;
+    background-repeat: no-repeat;
+    display: block;
+    color: white;
+    padding: 5px 60px 5px 50px;
+  }
+  .order_item_quantity {
+
+  }
+
+  tbody {
+    td {
+      width: 15%;
+    }
+  }
+
+  &Cart {
+    display: flex;
+    align-items: center;
+    .quantity {
+      $size: 35px; //change this to change size of picker
+      $border-radius: 3px; //set to 0 if not required
+      display: inline-block;
+      margin-right: 30px;
+      position: relative;
+      font-size: 0;
+      overflow: hidden;
+      border-radius: $border-radius;
+      width: $size;
+      height: ($size*3);
+      button {
+        display: block;
+        width: $size;
+        height: $size;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #000;
+        font-size: ($size * 0.7);
+        line-height: 1;
+        cursor: pointer;
+        //@include transition(color 200ms);
+        &:focus {
+          outline: none;
+        }
+        &:disabled {
+          color: #ccc;
+          cursor: default;
+        }
+        &:first-child {
+          bottom: 0;
+          border: 1px solid #d8d8d8;
+          border-radius: 6px 0 0 6px;
+          &:before {
+            content: "-";
+          }
+        }
+        &:last-child {
+          border: 1px solid #d8d8d8;
+          border-radius: 0 6px 6px 0;
+          top: 0;
+          &:before {
+            content: "+";
+          }
+        }
+      }
+      input[type="number"] {
+        position: absolute;
+        width: ($size * 2);
+        height: $size;
+        top: $size;
+        margin: 0;
+        border: solid #d8d8d8;
+        border-width: 1px 0 1px 0;
+        font-size: ($size * 0.4);
+        font-weight: bold;
+        text-align: center;
+        -moz-appearance:textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+      &.horiz {
+        width: ($size*4);
+        height: $size;
+        button {
+          &:first-child {
+            left: 0;
+          }
+          &:last-child {
+            right: 0;
+          }
+        }
+        &:after {
+          bottom: 0;
+        }
+        input[type="number"] {
+          position: absolute;
+          top: 0;
+          left: $size;
+        }
+      }
+    }
+  }
+}
+
 .productCard {
   position: relative;
   display: block;
@@ -26,4 +147,24 @@
       color: #ffffff;
     }
   }
+}
+
+.quantity input {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+  text-align:center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-right: none;
+}
+
+.quantity input:last-child {
+  border-right: 1px solid #ccc;
+}
+
+input[type="button"] {
+  cursor: pointer
 }

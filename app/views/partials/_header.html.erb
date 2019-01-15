@@ -7,24 +7,24 @@
     </div>
     <div>
       <div class="headerContacts">
-        <%= link_to '+375 29 267 08 78', 'tel:+375292670878' %>
+        <%= link_to '+375 29 267 08 78', 'tel:+375292670878', class: 'phone' %>
         <button>Заказать звонок</button>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
         <div class="basketContainer"><%= render 'layouts/cart_text' %></div>
       </div>
       <nav class="headerNav">
         <ul class="headerNavMenu">
-          <li class="headerNavMenuItem"><%= link_to "О нас", '/about' %></li>
           <li class="headerNavMenuItem"><%= link_to "Каталог", catalog_index_path %></li>
           <li class="headerNavMenuItem"><%= link_to "Калькулятор объемов", '/calculator' %></li>
           <li class="headerNavMenuItem"><%= link_to "Новости", news_index_path %></li>
           <li class="headerNavMenuItem"><%= link_to "Доставка и оплата", '/delivery' %></li>
+          <li class="headerNavMenuItem"><%= link_to "Контакты", '/contacts' %></li>
         </ul>
       </nav>
     </div>
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
   </div>
 </header>
