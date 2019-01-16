@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :catalog, only: :index
   resources :order_items, only: [:create, :update, :destroy]
+  resource :contact
+  resolve("Contact") {[:contact]}
+
 
   # get '/cart/step1' => 'wizard#step1'
   # get '/cart/step2' => 'wizard#step2'

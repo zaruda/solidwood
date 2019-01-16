@@ -2,6 +2,7 @@ class NewsController < InheritedResources::Base
 
   def index
     @news = News.published
+    @page = Page.find_by_name('news')
   end
 
   def show

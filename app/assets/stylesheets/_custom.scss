@@ -70,6 +70,64 @@ a.box:hover, a.box:focus {
 
 .modal {
   z-index: 999;
+  &-content {
+    border-radius: 6px;
+    .box {
+      background-color: #fff;
+      color: #4a4a4a;
+      display: block;
+      padding: 1.25rem;
+    }
+
+  }
+}
+
+#about {
+  .modal-header {
+    background-image: asset-url('about_modal.png');
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      color: #ffffff;
+    }
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    li {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+#callback {
+  text-align: center;
+  .modal-content {
+    max-width: 460px;
+    .box {
+      padding: 3rem;
+      @media (max-width: $screen-mobile) {
+        padding: 1.25rem;
+      }
+    }
+  }
+  form {
+    label {
+      text-align: left;
+      margin: 0;
+    }
+  }
+
+}
+.label {
+  font-weight: 400;
 }
 
 .container {

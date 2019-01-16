@@ -7,6 +7,7 @@ class CatalogController < ApplicationController
     else
       ProductType.all
                 end
-    # p @products
+
+    @page = Page.find_by_name('catalog')
   end
 end

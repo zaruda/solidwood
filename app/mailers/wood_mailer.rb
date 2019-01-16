@@ -1,11 +1,13 @@
 class WoodMailer < ApplicationMailer
-  def send_invoice
-    # @user = params[:subscriber]
-    # mail(to: @user.email, subject: '')
-  end
 
   def new_order
     @mail = params[:mail]
-    mail(to: ENV['EMAIL_DESTINATION'], subject: 'New contact email!')
+    mail(to: ENV['EMAIL_DESTINATION'], subject: 'Поступил новый заказ!')
+  end
+
+  def callback
+    p params
+    @mail = params[:mail]
+    mail(to: 'zaruda46@gmail.com', subject: 'Новая заявка!')
   end
 end

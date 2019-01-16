@@ -21,6 +21,7 @@ class WizardsController < ApplicationController
   def create
     if @order_wizard.order.save
       session[:order_attributes] = nil
+      session[:order_id] = nil
       # redirect_to root_path, notice: 'User succesfully created!'
     # else
       # redirect_to({ action: Wizard::Order::STEPS.first }, alert: 'There were a problem when creating the user.')

@@ -11,6 +11,9 @@
   padding: 1rem;
   z-index: 999;
   transition: all 0.25s ease-in-out;
+  @media (max-width: $screen-mobile) {
+    padding: 0.8rem 0;
+  }
   &.white {
     background-color: #ffffff;
     a {
@@ -24,8 +27,14 @@
         }
       }
     }
-
   }
+
+  .logo {
+    @media (max-width: $screen-mobile) {
+      max-width: 160px;
+    }
+  }
+
   &.withBg {
     background-image: asset-url('header_bg.png');
     -webkit-background-size: cover;
@@ -58,6 +67,11 @@
     .basketContainer {
       padding-left: 20px;
       border-left: 1px solid rgba(255, 255, 255, 0.5);
+      @media (max-width: $screen-mobile) {
+        padding-left: 0;
+        margin-right: 10px;
+        border-left: none;
+      }
       .basket {
         position: relative;
         display: block;
@@ -107,9 +121,37 @@
         a {
           font-size: 1rem;
           color: #ffffff;
-          &:hover {
-            color: #ffffff;
-          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #0c0e0e;
+  transform: translateX(0);
+  transition: transform 0.45s ease-in-out;
+  z-index: 9999;
+  &.hidden {
+    transform: translateX(-250px);
+  }
+  &Nav {
+
+    &Menu {
+      padding: 3rem 0;
+      &Item {
+        margin: 1.2rem 0;
+        a {
+          font-weight: 500;
+          color: #ffffff;
         }
       }
     }

@@ -1,0 +1,59 @@
+<form class="calculator" id="count">
+  <h2 class="title is-5">Расчет общего количества досок по объему в кубометрах и размерам одной доски</h2>
+
+  <div class="columns block">
+    <div class="column">
+      <div class="field">
+        <label class="label">Ширина, мм</label>
+        <div class="control">
+          <input class="input is-medium" type="number" name="width" placeholder="Ширина">
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="field">
+        <label class="label">Толщина, мм</label>
+        <div class="control">
+          <input class="input is-medium" type="number" name="thickness" placeholder="Толщина">
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="field">
+        <label class="label">Длина, м</label>
+        <div class="control">
+          <input class="input is-medium" type="number" name="length" placeholder="Длина">
+        </div>
+      </div>
+    </div>
+    <div class="column">
+
+      <div class="field">
+        <label class="label">Объем</label>
+        <div class="control">
+          <input class="input is-medium" type="number" name="capacity" placeholder="Объем">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="columns">
+    <div class="column">
+      <div class="field">
+        <label class="label">Количество досок, шт</label>
+        <div class="control">
+          <input class="input is-medium" type="text" disabled="true" name="count" placeholder="Количество досок">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button type="submit" class="button green">Рассчитать</button>
+    </div>
+  </div>
+</form>

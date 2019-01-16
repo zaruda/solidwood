@@ -18,7 +18,8 @@
       <% @news.each do |news| %>
         <%= render 'news/preview_block', news: news %>
       <% end %>
-      <%=link_to 'Все новости', news_index_path %>
+      <%=link_to 'Все новости', news_index_path, class: 'button-link' %>
+      <br>
     </div>
     <div class="tile is-vertical is-parent is-bordered">
       <div class="tile is-child box">

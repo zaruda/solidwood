@@ -1,0 +1,25 @@
+<div class="modal" id="callback">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <h2 class="title is-4">Оставьте нам заявку, мы обязательно перезвоним!</h2>
+      <%= form_with(model: Contact.new) do |f| %>
+        <div class="field">
+          <label class="label is-small ">Введите имя</label>
+          <div class="control">
+            <%= f.text_field :name, class: 'input is-medium', placeholder: 'Имя' %>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label is-small">Введите номер телефона</label>
+          <div class="control">
+            <%= f.text_field :phone, class: 'input is-medium', placeholder: 'Телефон' %>
+          </div>
+        </div>
+        <br>
+        <%= f.submit 'Заказать звонок', class: 'button green', data: { "disable-with": "Отправка..." } %>
+      <% end %>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>

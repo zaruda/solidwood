@@ -3,4 +3,13 @@ module ApplicationHelper
     options[:locale] ||= I18n.locale
     super(number, options)
   end
+
+  def title(title)
+    content_for(:title) { title }
+  end
+
+  def description(text)
+    content_for(:description) { text }
+  end
+
 end

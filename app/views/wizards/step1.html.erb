@@ -32,13 +32,16 @@
 
   <div class="spacer"></div>
 
-  <%= simple_form_for @order_wizard, as: :order_wizard, url: validate_step_wizard_path do |f| %>
-    <%= f.error_notification %>
+
+  <% if @order_items.size != 0 %>
+    <%= simple_form_for @order_wizard, as: :order_wizard, url: validate_step_wizard_path do |f| %>
+      <%= f.error_notification %>
 
 
-    <%= hidden_field_tag :current_step, 'step1' %>
+      <%= hidden_field_tag :current_step, 'step1' %>
 
-    <%= f.submit 'Далее', class: 'button green' %>
+      <%= f.submit 'Далее', class: 'button green' %>
+    <% end %>
   <% end %>
 
   <br>

@@ -25,11 +25,13 @@ footer {
       > .address {
         margin-left: 3rem;
         @media (max-width: $screen-mobile) {
-          margin-left: 0;
+          margin: 1rem 0;
         }
-        a {
+        span {
           display: inline-block;
           margin-top: 15px;
+          cursor: pointer;
+          color: #075681;
           &:not(:last-child) {
             margin-right: 1.5rem  ;
           }
