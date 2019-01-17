@@ -1,10 +1,18 @@
 class OrderItemsController < ApplicationController
   def create
     @order = current_order
-    @order_item = @order.order_items.new(order_item_params)
-    p @order.errors
-    @order.save
-    session[:order_id] = @order.id
+    order_item = @order.order_items.where(product_id: order_item_params[:product_id], order_id: @order.id).first
+
+    if order_item
+      sum = order_item.quantity + order_item_params[:quantity].to_i
+      order_item.update(quantity: sum)
+    else
+      # @order_item = @order.items.create_with(order_item_params).find_or_create_by(product_id: order_item_params[:product_id], order_id: @order.id)
+      @order_item = @order.order_items.new(order_item_params)
+      @order.save
+      session[:order_id] = @order.id
+    end
+
   end
 
   def update

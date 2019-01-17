@@ -21,7 +21,10 @@
     }
     .headerContacts {
       .basketContainer {
-        border-left: 1px solid #000000;
+          border-left: 1px solid #000000;
+        @media (max-width: $screen-desktop) {
+          border-left: none
+        }
         .basket {
           background: asset-url('basket-inverted.svg') no-repeat;
         }
@@ -59,7 +62,6 @@
       font-size: 1.4rem;
     }
     .phone {
-
       @media (max-width: $screen-desktop) {
         display: none;
       }

@@ -1,0 +1,43 @@
+<h1>Новый заказ!</h1>
+
+<h3>Информация о клиенте</h3>
+<p>Имя: <%= @order.name %></p>
+<p>E-mail: <%= @order.email %></p>
+<p>Телефон: <%= @order.phone_number %></p>
+
+<br>
+
+<p>Общая стоимость: <b><%= number_to_currency @order.subtotal, locale: :by %> </b></p>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>Наименование</th>
+    <% @order.order_items.first.product.properties.order(:name).each do |prop| %>
+      <th> <%= prop.name %></th>
+    <% end %>
+    <th>Стоимость</th>
+    <th>Количество</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @order.order_items.each do |order_item| %>
+    <tr>
+      <td>
+        <%= order_item.product.product_type.name %>
+      </td>
+      <% order_item.product.properties.order(:name).each do |property| %>
+        <td><%= property.value %></td>
+      <% end %>
+      <td>
+        <%= number_to_currency order_item.product.price, locale: :by %>
+      </td>
+      <td>
+        <%= order_item.quantity %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

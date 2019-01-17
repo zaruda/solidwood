@@ -28,7 +28,13 @@ a.box:hover, a.box:focus {
     > div {
       &:not(:last-child) {
         border-bottom: 1px solid #d8d8d8;
+        @media (max-width: $screen-mobile) {
+          border: none
+        }
       }
+    }
+    @media (max-width: $screen-mobile) {
+      border: none
     }
   }
 }

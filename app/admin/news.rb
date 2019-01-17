@@ -2,16 +2,23 @@ ActiveAdmin.register News do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :title, :intro, :body, :news_type, :published_at, :banner
+  permit_params :title, :description, :body, :news_type, :published_at, :banner
 
   scope :published
   scope :unpublished
 
+  index do
+    id_column
+    column :title
+    column :description
+    column :news_type
+    actions
+  end
 
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :title
-      f.input :intro
+      f.input :description
       f.input :news_type
       f.input :body, as: :ckeditor
       f.input :banner, :as => :file
@@ -39,12 +46,6 @@ ActiveAdmin.register News do
     post.update(published_at: nil)
     redirect_to admin_news_path(post)
   end
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+
 
 end

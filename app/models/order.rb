@@ -3,14 +3,9 @@ class Order < ActiveRecord::Base
   has_many :order_items
   before_validation :set_order_status, on: :create
   before_save :update_subtotal
-  after_create :send_to_email
 
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
-  end
-
-  def send_to_email
-    p self
   end
 
   private
@@ -20,7 +15,6 @@ class Order < ActiveRecord::Base
   end
 
   def update_subtotal
-    p subtotal
     self[:subtotal] = subtotal
   end
 end

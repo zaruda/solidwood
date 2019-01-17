@@ -3,7 +3,7 @@
   <div class="modal-content">
     <div class="box">
       <h2 class="title is-4">Оставьте нам заявку, мы обязательно перезвоним!</h2>
-      <%= form_with(model: Contact.new) do |f| %>
+      <%= form_with(model: Contact.new, id: 'contact') do |f| %>
         <div class="field">
           <label class="label is-small ">Введите имя</label>
           <div class="control">

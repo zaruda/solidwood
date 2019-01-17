@@ -9,6 +9,10 @@
   -webkit-background-size: 100%;
   background-size: 100%;
   text-align: center;
+  @media (max-width: $screen-mobile) {
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
   &-body {
     padding: 11rem 0 !important;
   }

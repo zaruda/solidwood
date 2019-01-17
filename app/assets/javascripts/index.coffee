@@ -20,6 +20,12 @@ $(document).on 'turbolinks:load', ->
     $('html').removeClass 'is-clipped'
 
 
+  $("form#contact").on("ajax:success", (e, data, status, xhr) ->
+    $(".modal#callback").removeClass 'is-active'
+    $(".modal#success").addClass 'is-active'
+  ).on "ajax:error", (e, xhr, status, error) ->
+    $(".modal#success .box").html "<h1>Произошла ошибка :(</h1> <p>Пожалуйста, попробуйте отправить заявку позже!</p>".addClass 'is-active'
+
   $(window).scroll ->
     scroll = $(window).scrollTop()
     if scroll >= 70 && !header.hasClass 'withBg'

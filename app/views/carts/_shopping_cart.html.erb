@@ -4,6 +4,8 @@
   </p>
 <% else %>
 
+
+
   <table class="table is-fullwidth productTable">
     <thead>
     <tr>
@@ -21,7 +23,7 @@
     <% @order_items.each do |order_item| %>
       <tr>
         <td>
-          <%= order_item.product.name %>
+          <%= order_item.product.product_type.name %>
         </td>
         <% order_item.product.properties.order(:name).each do |property| %>
           <td><%= property.value %></td>
@@ -65,4 +67,5 @@
     <% end %>
     </tbody>
   </table>
+  <small class="is-pulled-right">* Пожалуйста, после обновления количества товара, нажмите на <%= image_tag 'refresh.svg', alt: 'Обновить' %> для подтверждения изменений!</small>
 <% end %>

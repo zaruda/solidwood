@@ -19,13 +19,27 @@ class WizardsController < ApplicationController
   end
 
   def create
-    if @order_wizard.order.save
+    # if @order_wizard.order.save
+
+    if current_order.update(
+      name: @order_wizard.order.name,
+      email: @order_wizard.order.email,
+      phone_number: @order_wizard.order.phone_number,
+      total: current_order.subtotal,
+      order_status_id: 2
+    )
+
+      WoodMailer.with(order: current_order).new_order.deliver_now
       session[:order_attributes] = nil
       session[:order_id] = nil
+
+    end
+
+
       # redirect_to root_path, notice: 'User succesfully created!'
     # else
       # redirect_to({ action: Wizard::Order::STEPS.first }, alert: 'There were a problem when creating the user.')
-    end
+    # end
   end
 
   private

@@ -2,7 +2,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contacts_params)
     if @contact.save!
-      WoodMailer.with(@contact).callback.deliver_now
+      WoodMailer.with(contact: @contact).callback.deliver_now
+      render json: { status: :created }
     end
   end
 

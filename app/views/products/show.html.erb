@@ -4,7 +4,7 @@
   <h1 class="title">Продукция</h1>
 </div>
 <hr />
-<div class="container">
+<div class="container" style="overflow: auto">
   <div class="columns">
     <div class="column is-one-quarter">
       <figure class="image is-square">
@@ -25,4 +25,5 @@
     </div>
   </div>
   <%= render 'partials/products_table', products: @product_type.products, order_item: @order_item %>
+  <div class="spacer-small"></div>
 </div>

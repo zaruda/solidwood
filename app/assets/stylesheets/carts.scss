@@ -1,6 +1,7 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
 .stepper {
   display: flex;
@@ -84,6 +85,10 @@
 .button-link {
   color: #075681;
   font-size: 1.2rem;
+  @media (max-width: $screen-mobile) {
+    display: block;
+    text-align: center;
+  }
 }
 
 .new_order_wizard {
