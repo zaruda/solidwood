@@ -8,6 +8,7 @@ ActiveAdmin.register News do
   scope :unpublished
 
   index do
+    selectable_column
     id_column
     column :title
     column :description

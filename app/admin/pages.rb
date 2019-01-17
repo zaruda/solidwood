@@ -4,19 +4,25 @@ ActiveAdmin.register Page do
 #
   permit_params :name, :title, :description, :body
 
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :title
+    column :description
+    actions
+  end
+
   form do |f|
     f.inputs do
       if f.object.new_record?
-        f.input :name, collection: ['about', 'catalog', 'calculator', 'delivery', 'contact', 'news' ]
+        f.input :name, collection: ['Каталог', 'Калькулятор', 'Доставка и оплата', 'Контакты', 'Новости' ]
       end
       f.input :title
       f.input :description
       f.input :body, as: :ckeditor
     end
     actions
-  end
-
-  show do |page|
   end
 
   show do

@@ -1,5 +1,5 @@
-<% description @page.description %>
 <% title @page.title %>
+<% description @page.description %>
 
 <br>
 <br>
@@ -33,6 +33,7 @@
         </div>
       <% end %>
     </div>
+    <p><%= raw(@page.body) %></p>
   <% end %>
 
   <div class="spacer"></div>

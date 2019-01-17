@@ -4,21 +4,20 @@ class PagesController < InheritedResources::Base
     @page = Page.find_by_name(params[:page])
   end
 
-  def about
-    @page = Page.find_by_name('about')
-  end
+  # def about
+  #   @page = Page.find_by_name('О нас')
+  # end
 
   def calculator
-    @page = Page.find_by_name('calculator')
-    # add_breadcrumb "Калькулятор объемов", '/calculator'
+    @page = Page.find_by_name('Калькулятор')
   end
 
   def delivery
-    @page = Page.find_by_name('delivery')
+    @page = Page.find_by_name('Доставка и оплата')
   end
 
   def contacts
-    @page = Page.find_by_name('contact')
+    @page = Page.find_by_name('Контакты')
   end
 
   private

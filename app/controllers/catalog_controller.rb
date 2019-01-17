@@ -8,6 +8,6 @@ class CatalogController < ApplicationController
       ProductType.all
                 end
 
-    @page = Page.find_by_name('catalog')
+    @page = Page.find_by_name('Каталог')
   end
 end
