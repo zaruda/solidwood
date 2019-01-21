@@ -6,17 +6,15 @@
       </div>
       <div class="address">
         <p>
-          ООО «ТГ-палет», УНП 291604420 </br>
-          225536, Брестская обл., Столинский р-н, Видиборский с/с, д.4, </br>
-          1,0 км юго-восточнее д.Видибор
+          <%= raw(setting.address) %>
         </p>
         <span class="button-modal" data-target="map">Показать на карте</span>
         <span class="button-modal" data-target="about">О нас</span>
       </div>
     </div>
     <div class="footerContacts">
-      <%= link_to '+375 29 267 08 78', 'tel:+375292670878', class: 'phone' %>
-      <%= link_to 'tg.pallet@gmail.com', 'mailto:tg.pallet@gmail.com', class: 'email' %>
+      <%= link_to setting.phone, "tel:#{setting.phone.delete(' ')}", class: 'phone' %>
+      <%= link_to setting.email, "mailto:#{setting.email}", class: 'email' %>
     </div>
   </div>
 </footer>
