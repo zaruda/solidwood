@@ -66,7 +66,7 @@
     .basketContainer {
       padding-left: 20px;
       border-left: 1px solid rgba(255, 255, 255, 0.5);
-      @media (max-width: $screen-mobile) {
+      @media (max-width: $screen-desktop) {
         padding-left: 0;
         margin-right: 10px;
         border-left: none;
