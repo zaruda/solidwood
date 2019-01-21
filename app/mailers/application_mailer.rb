@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'hi@yellow.id'
+  default from: 'TG Pallet LLC'
   layout 'mailer'
 end

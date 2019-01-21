@@ -22,9 +22,10 @@ $(document).on 'turbolinks:load', ->
 
   $("form#contact").on("ajax:success", (e, data, status, xhr) ->
     $(".modal#callback").removeClass 'is-active'
+    $(this).trigger('reset');
     $(".modal#success").addClass 'is-active'
   ).on "ajax:error", (e, xhr, status, error) ->
-    $(".modal#success .box").html "<h1>Произошла ошибка :(</h1> <p>Пожалуйста, попробуйте отправить заявку позже!</p>".addClass 'is-active'
+    $(".modal#success .box").html("<h1>Произошла ошибка.</h1> <p>Пожалуйста, попробуйте отправить заявку позже!</p>").addClass 'is-active'
 
   $(window).scroll ->
     scroll = $(window).scrollTop()

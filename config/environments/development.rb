@@ -32,6 +32,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { host: "locahost:3000" }
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: ENV['SMTP_SERVER'],
@@ -40,7 +41,7 @@ Rails.application.configure do
     authentication: ENV['SMTP_AUTH'],
     user_name: ENV['SMTP_LOGIN'],
     password: ENV['SMTP_PASSWORD'],
-    tls: ENV['SMTP_TLS'],
+    enable_starttls_auto: true,
   }
 
   # Print deprecation notices to the Rails logger.
