@@ -18,7 +18,7 @@ class @GoogleAnalytics
     if typeof Turbolinks isnt 'undefined' and Turbolinks.supported
       $(document).on 'turbolinks:load', (->
         GoogleAnalytics.trackPageview()
-      ), true
+      )
     else
       GoogleAnalytics.trackPageview()
 
