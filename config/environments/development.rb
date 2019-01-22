@@ -44,6 +44,8 @@ Rails.application.configure do
     enable_starttls_auto: true,
   }
 
+  config.i18n.fallbacks = [I18n.default_locale]
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
