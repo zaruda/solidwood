@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
+  GoogleAnalytics.trackPageview()
   header = $('header')
   $('.navbar-burger').click ->
     $(this).toggleClass 'is-active'
