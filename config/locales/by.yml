@@ -4,3 +4,4 @@ by:
       format:
         format: "%n %u"
         unit: "руб."
+        precision: 2

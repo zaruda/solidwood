@@ -10,7 +10,7 @@
     <thead>
     <tr>
       <th>Наименование</th>
-      <% @order_items.first.product.properties.order(:name).each do |prop| %>
+      <% cache @order_items.first.product.properties.order(:name).each do |prop| %>
         <th> <%= prop.name %></th>
       <% end %>
       <th>Стоимость</th>
@@ -20,7 +20,7 @@
     <tbody>
 
 
-    <% @order_items.each do |order_item| %>
+    <% cache @order_items.each do |order_item| %>
       <tr>
         <td>
           <%= order_item.product.product_type.name %>
