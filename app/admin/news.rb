@@ -16,6 +16,21 @@ ActiveAdmin.register News do
     actions
   end
 
+  show do
+    attributes_table do
+      row :published do |news|
+        status_tag(news.published_at.nil? ? false : true)
+      end
+      row :news_type
+      row :title
+      row :description
+      row :body do |news|
+        raw(news.body)
+      end
+    end
+    active_admin_comments
+  end
+
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :title

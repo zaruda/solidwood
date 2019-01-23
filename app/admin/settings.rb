@@ -12,4 +12,18 @@ ActiveAdmin.register Setting do
     actions
   end
 
+  show do
+    attributes_table do
+      row :email
+      row :phone
+      row :bank
+      row :address
+      row :about do |setting|
+        raw(setting.about)
+      end
+    end
+    active_admin_comments
+  end
+
+
 end
