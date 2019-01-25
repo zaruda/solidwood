@@ -16,11 +16,11 @@
     <%= csrf_meta_tags %>
 
     <% if yield(:title).present? %>
-      <title>СолидВуд - <%= yield(:title) %></title>
-      <meta property="og:title" content="СолидВуд - <%= yield(:title) %>" />
+      <title><%= yield(:title) %> | СолидВуд</title>
+      <meta property="og:title" content="<%= yield(:title) %> | СолидВуд" />
       <% else %>
-        <title>СолидВуд - пиломатериалы от производителя</title>
-        <meta property="og:title" content="СолидВуд - пиломатериалы от производителя" />
+        <title>СолидВуд - Пиломатериалы от производителя</title>
+        <meta property="og:title" content="СолидВуд - Пиломатериалы от производителя" />
     <% end %>
 
     <% if yield(:description).present? %>
