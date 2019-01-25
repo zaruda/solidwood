@@ -23,10 +23,13 @@
         <%= @product_type.name %>
       </h3>
       <p>
-        <%= @product_type.description %>
+        <%= raw(@product_type.description) %>
       </p>
     </div>
   </div>
-  <%= render 'partials/products_table', products: @product_type.products, order_item: @order_item %>
+  <% if @product_type.products.length > 0 %>
+    <%= render 'partials/products_table', products: @product_type.products, order_item: @order_item %>
+  <% end %>
+
   <div class="spacer-small"></div>
 </div>

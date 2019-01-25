@@ -5,8 +5,6 @@ class Product < ActiveRecord::Base
 
   accepts_nested_attributes_for :properties, allow_destroy: true
 
-  # belongs_to :product_type
-
   has_one_attached :image
 
 

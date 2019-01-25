@@ -11,7 +11,8 @@
     <meta property="og:url" content="<%=  request.original_url %>" />
     <meta name="referrer" content="always">
     <meta name="theme-color" content="#ffffff">
-
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
 
     <% if yield(:title).present? %>
@@ -28,8 +29,7 @@
     <% end %>
 
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
     <% if Rails.env.production? %>
       <script type="text/javascript">

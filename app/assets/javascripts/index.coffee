@@ -7,18 +7,19 @@ $(document).on 'turbolinks:load', ->
   $('.navbar-burger').click ->
     $(this).toggleClass 'is-active'
     $('.sidebar').toggleClass 'hidden'
+    return
 
 
   $('.button-modal').click ->
     target = $(this).data('target')
     $(".modal##{target}").addClass 'is-active'
     $('html').addClass 'is-clipped'
-
+    return
 
   $('.modal-close').click ->
     $(this).parent().removeClass 'is-active'
     $('html').removeClass 'is-clipped'
-
+    return
 
   $("form#contact").on("ajax:success", (e, data, status, xhr) ->
     $(".modal#callback").removeClass 'is-active'
