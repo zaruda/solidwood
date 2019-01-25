@@ -141,3 +141,9 @@ a.box:hover, a.box:focus {
     padding: 0 15px;
   }
 }
+
+
+.input[disabled], .textarea[disabled] {
+  background-color: #f9f9f9;
+  color: #555555;
+}

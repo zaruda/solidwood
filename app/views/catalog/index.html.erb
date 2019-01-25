@@ -25,9 +25,9 @@
     </div>
 
     <% else %>
-    <div class="columns">
+    <div class="columns is-multiline">
       <% @products.each do |product| %>
-        <div class="column">
+        <div class="column is-one-quarter">
           <%= render "products/product_card", product: product, order_item: @order_item %>
           <%#= render "product_row", product: product, order_item: @order_item %>
         </div>
