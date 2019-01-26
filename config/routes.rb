@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get '/catalog', to: redirect('/catalog/product')
   get '/checkout', to: redirect('/checkout/step1')
+  get '/products', to: redirect('/catalog/product')
 
   get '/contacts' => 'pages#contacts'
 

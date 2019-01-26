@@ -12,4 +12,8 @@ module ApplicationHelper
     content_for(:description) { text }
   end
 
+  def image(url)
+    content_for(:image) { url }
+  end
+
 end

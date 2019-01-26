@@ -1,5 +1,8 @@
 <% description @product_type.description %>
 <% title @product_type.name%>
+<% if @product_type.image.attached? %>
+  <% image @product_type.image.service_url %>
+<% end %>
 
 <div class="container">
   <br>
