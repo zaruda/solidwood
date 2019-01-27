@@ -47,6 +47,7 @@ class WizardsController < ApplicationController
   def load_order_wizard
     @order_wizard = wizard_order_for_step(action_name)
     @order_items = current_order.order_items
+    @order = current_order
   end
 
   def wizard_order_next_step(step)

@@ -5,8 +5,14 @@
 @import "mixins";
 
 .productTable {
-  thead {
+  thead,
+  tfoot {
     background-color: #CAAD73;
+  }
+  tfoot {
+    td {
+      padding: 0.5em 0;
+    }
   }
   .button-card {
     @extend %button;
