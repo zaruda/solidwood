@@ -4,6 +4,11 @@
 
 @import "mixins";
 
+.is-overflow-mobile {
+  @media (max-width: 768px) {
+    overflow: auto;
+  }
+}
 .productTable {
   thead,
   tfoot {
