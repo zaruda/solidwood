@@ -94,7 +94,7 @@
       }
       input[type="number"] {
         position: absolute;
-        width: ($size * 2);
+        width: 62px;
         height: $size;
         top: $size;
         margin: 0;
@@ -111,7 +111,7 @@
         }
       }
       &.horiz {
-        width: ($size*4);
+        width: 150px;
         height: $size;
         button {
           &:first-child {
