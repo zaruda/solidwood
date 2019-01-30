@@ -53,8 +53,6 @@
       font-size: 0;
       overflow: hidden;
       border-radius: $border-radius;
-      width: $size;
-      height: ($size*3);
       button {
         display: block;
         width: $size;
@@ -111,7 +109,7 @@
         }
       }
       &.horiz {
-        width: 150px;
+        width: 132px;
         height: $size;
         button {
           &:first-child {
