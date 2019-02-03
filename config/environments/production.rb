@@ -84,14 +84,15 @@ Rails.application.configure do
   # Store files on Amazon S3.
   config.active_storage.service = :amazon
 
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: ENV['SMTP_SERVER'],
-    port: ENV['SMTP_PORT'],
-    domain: ENV['SMTP_DOMAIN'],
-    authentication: ENV['SMTP_AUTH'],
-    user_name: ENV['SMTP_LOGIN'],
-    password: ENV['SMTP_PASSWORD'],
-    enable_starttls_auto: true,
+      address: ENV['SMTP_SERVER'],
+      port: ENV['SMTP_PORT'],
+      domain: ENV['SMTP_DOMAIN'],
+      authentication: ENV['SMTP_AUTH'],
+      user_name: ENV['SMTP_LOGIN'],
+      password: ENV['SMTP_PASSWORD'],
+      enable_starttls_auto: true,
   }
 
 

@@ -16,7 +16,7 @@ ActiveAdmin.register Page do
   form do |f|
     f.inputs do
       if f.object.new_record?
-        f.input :name, collection: ['Каталог', 'Калькулятор', 'Доставка и оплата', 'Контакты', 'Новости' ]
+        f.input :name, collection: ['Главная', 'Каталог', 'Калькулятор', 'Доставка и оплата', 'Контакты', 'Новости' ]
       end
       f.input :title
       f.input :description

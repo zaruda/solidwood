@@ -1,3 +1,6 @@
+<% title @page.title %>
+<% description @page.description %>
+
 <section class="hero is-info is-medium">
   <div class="hero-body">
     <div class="container">
@@ -31,12 +34,7 @@
         <br>
       </div>
       <div class="tile is-child box">
-        <p class="title">
-          Преимущества дискового пиления
-        </p>
-        <p>
-          Предлагаем антисептированные изделия, возможность распила по Вашим спецификациям. Работаем на давальческом сырье.
-        </p>
+          <%= raw(@page.body) %>
         <br>
       </div>
     </div>
