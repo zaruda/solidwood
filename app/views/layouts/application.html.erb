@@ -28,6 +28,11 @@
       <meta property="og:description" content="<%= yield(:description) %>" />
     <% end %>
 
+    <% if yield(:keywords).present? %>
+      <meta name="keywords" content="<%= yield(:keywords) %>" />
+    <% end %>
+
+
     <% if yield(:image).present? %>
       <meta property="og:image" content="<%= yield(:image) %>" />
       <% else %>

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <% title @news.title %>
 <% description @news.description %>
+<% keywords @news.keywords %>
 <% if @news.banner.attached? %>
   <% image @news.banner.service_url %>
 <% end %>
