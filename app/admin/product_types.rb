@@ -1,5 +1,5 @@
 ActiveAdmin.register ProductType do
-  permit_params :name, :description, :price, :image
+  permit_params :name, :description, :price, :image, :keywords
 
   index do
     selectable_column
@@ -29,6 +29,7 @@ ActiveAdmin.register ProductType do
     f.inputs do
       f.input :name
       f.input :description, as: :ckeditor
+      f.input :keywords
       f.input :price
       f.input :image, as: :file
     end

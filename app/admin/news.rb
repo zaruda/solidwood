@@ -2,7 +2,7 @@ ActiveAdmin.register News do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :title, :description, :body, :news_type, :published_at, :banner
+  permit_params :title, :description, :body, :news_type, :published_at, :banner, :keywords
 
   scope :published
   scope :unpublished
@@ -36,6 +36,7 @@ ActiveAdmin.register News do
       f.input :title
       f.input :description
       f.input :news_type
+      f.input :keywords
       f.input :body, as: :ckeditor
       f.input :banner, :as => :file
         # f.input :banner, :as => :file, :hint => f.image_tag(f.object.head_image.url(:medium))
