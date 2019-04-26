@@ -12,6 +12,11 @@ Rails.application.configure do
     'Expires' => "#{1.day.from_now.to_formatted_s(:rfc822)}"
   }
 
+  config.action_dispatch.default_headers = {
+      'X-XSS-Protection' => '1; mode=block',
+      'X-Content-Type-Options' => 'nosniff'
+  }
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
