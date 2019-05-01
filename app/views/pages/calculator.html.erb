@@ -14,14 +14,14 @@
     <div class="column is-four-fifths">
       <%= raw(@page.body) %>
       <br>
-      <%= render 'partials/calculator_capacity' %>
+      <%= render 'partials/calculator_capacity', cached: true %>
       <br>
       <br>
-      <%= render 'partials/calculator_count' %>
+      <%= render 'partials/calculator_count', cached: true %>
       <br>
     </div>
     <div class="column">
-      <%= render 'partials/banner' %>
+      <%= render 'partials/banner', cached: true %>
     </div>
   </div>
 </div>

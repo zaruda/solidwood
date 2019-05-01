@@ -7,6 +7,9 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  # Enable redis cache
+  config.cache_store = :redis_cache_store, { url: ENV["REDISTOGO_URL"] }
+
   config.public_file_server.headers = {
     'Cache-Control' => 'public, s-maxage=72000, max-age=36000',
     'Expires' => "#{1.day.from_now.to_formatted_s(:rfc822)}"

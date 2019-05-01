@@ -9,6 +9,9 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # Enable redis
+  # config.cache_store = :redis_cache_store, { url: ENV["REDISTOGO_URL"] }
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
