@@ -13,4 +13,4 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-
+//= stub active_material/fonts
