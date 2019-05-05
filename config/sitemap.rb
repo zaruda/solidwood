@@ -26,9 +26,6 @@ SitemapGenerator::Sitemap.create do
   end
 
   add '/contacts'
-  add '/checkout/step1'
-  add '/checkout/step2'
-  add '/checkout/thanks'
 
   # Put links creation logic here.
   #
