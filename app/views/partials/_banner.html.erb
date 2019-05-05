@@ -1,4 +1,6 @@
-<div class="banner">
-  <div class="bannerText">закажи сейчас и получи скидку</div>
-  <%= link_to 'Перейти в каталог', catalog_index_path, class: 'button' %>
-</div>
+<%= link_to '/catalog/product' do %>
+  <div class="banner">
+    <div class="bannerText">закажи сейчас и получи скидку</div>
+    <div class="button">Перейти в каталог</div>
+  </div>
+<% end %>

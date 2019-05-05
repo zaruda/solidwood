@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_order, :setting
+  before_action :redirect_www_to_non_www
 
   def current_order
     if !session[:order_id].nil?
@@ -10,7 +11,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
+  def redirect_www_to_non_www
+    domain_parts = request.host.split('.')
+    if domain_parts.first == 'www'
+      redirect_to(request.original_url.gsub('www.', ''), status: 301) and nil
+    end
+  end
 
   protected
 

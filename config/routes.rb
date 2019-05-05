@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  get '/index.html', to: redirect('/')
+
   root 'index#index', controller: IndexController
 
   get '/about' => 'pages#about'

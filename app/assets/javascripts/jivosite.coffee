@@ -25,6 +25,7 @@ runChat = ->
     $.async = !0
     el_script.setAttribute 'charset', 'utf-8'
     el_script.src = '//code.jivosite.com/script/widget/' + jivo_id
+    el_script.async = true
     z.t = +new Date
     el_script.type = 'text/javascript'
     e.parentNode.insertBefore el_script, e
