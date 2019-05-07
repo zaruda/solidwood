@@ -21,7 +21,7 @@ class PagesController < InheritedResources::Base
   end
 
   def sitemap
-    render xml: File.read('tmp/sitemaps/sitemap.xml')
+    render xml: File.read(Rails.root.join('tmp', 'sitemaps/sitemap.xml'));
   end
 
   private
