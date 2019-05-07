@@ -20,10 +20,6 @@ class PagesController < InheritedResources::Base
     @page = Page.find_by_name('Контакты')
   end
 
-  def sitemap
-    render xml: File.read(Rails.root.join('tmp', 'sitemaps/sitemap.xml'));
-  end
-
   private
 
   def page_params

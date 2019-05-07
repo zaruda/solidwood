@@ -2,9 +2,6 @@
 SitemapGenerator::Sitemap.default_host = ENV['HOST']
 SitemapGenerator::Sitemap.compress = false
 
-SitemapGenerator::Sitemap.public_path = 'tmp/'
-SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
-
 SitemapGenerator::Sitemap.create do
   @news = News.published
 
