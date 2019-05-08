@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class PagesController < InheritedResources::Base
 
   def index
@@ -18,6 +20,11 @@ class PagesController < InheritedResources::Base
 
   def contacts
     @page = Page.find_by_name('Контакты')
+  end
+
+  def sitemap
+    file = open("https://#{ENV['DIGITALOCEAN_SPACE']}.ams3.cdn.digitaloceanspaces.com/sitemap.xml")
+    render xml: file
   end
 
   private
