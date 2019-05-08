@@ -113,13 +113,42 @@
     &Menu {
       display: flex;
       &Item {
-
+        position: relative;
         &:not(:last-child) {
           margin-right: 2.5rem;
         }
-        a {
+        > a {
           font-size: 1rem;
           color: #ffffff;
+        }
+        &:hover,
+        > a:hover {
+          .dropdownMenu {
+            visibility: visible;
+            z-index: 2;
+            opacity: 1;
+          }
+        }
+        .dropdownMenu {
+          position: absolute;
+          padding: 1rem 1.5rem;
+          background-color: #fff;
+          width: 400px;
+          border-radius: 0 5px 5px 5px;
+          transition: all .2s ease-in;
+          visibility: hidden;
+          z-index: -3;
+          opacity: 0;
+          &List {
+            column-count: 2;
+            li {
+              a {
+                display: block;
+                padding: 5px 0;
+                color: #363636;
+              }
+            }
+          }
         }
       }
     }

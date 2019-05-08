@@ -18,7 +18,17 @@
       </div>
       <nav class="headerNav">
         <ul class="headerNavMenu">
-          <li class="headerNavMenuItem"><%= link_to "Каталог", '/catalog/product' %></li>
+          <li class="headerNavMenuItem">
+            <%= link_to "Каталог", '/catalog/product' %>
+            <div class="dropdownMenu">
+              <ul class="dropdownMenuList">
+                <% product_types.each do |product| %>
+                  <li><%= link_to product.name, product_path(product) %></li>
+                <% end %>
+              </ul>
+            </div>
+
+          </li>
           <li class="headerNavMenuItem"><%= link_to "Калькулятор объемов", '/calculator' %></li>
           <li class="headerNavMenuItem"><%= link_to "Новости", news_index_path %></li>
           <li class="headerNavMenuItem"><%= link_to "Доставка и оплата", '/delivery' %></li>

@@ -41,3 +41,16 @@
     </div>
   </div>
 </div>
+
+<hr>
+
+<div class="container" id="catalog">
+  <h2 class="title is-3 has-text-centered">Каталог продукции</h2>
+  <div class="columns is-multiline">
+    <% product_types.each do |product| %>
+      <div class="column is-one-third">
+        <%= render "products/product_card", product: product %>
+      </div>
+    <% end %>
+  </div>
+</div>

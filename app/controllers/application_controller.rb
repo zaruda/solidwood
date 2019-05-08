@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_order, :setting
+  helper_method :current_order, :setting, :product_types
   before_action :redirect_www_to_non_www
 
   def current_order
@@ -18,12 +18,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+
   protected
 
   def setting
     @settings = Rails.cache.fetch('settings', :expires_in => 10.minutes) do
       Setting.first
     end
+  end
+
+  def product_types
+    @product_types = ProductType.all
   end
 
 end

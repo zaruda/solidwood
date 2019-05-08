@@ -1,5 +1,4 @@
 <%= link_to product_path(product), class: "card productCard" do %>
-
     <div class="card-image">
     <figure class="image is-square">
       <% if product.image.attached? %>
@@ -16,10 +15,5 @@
         <p class="subtitle is-6">от <%= number_to_currency product.price, locale: :by %> / <span>м<sup><small>3</small></sup></span></p>
       </div>
     </div>
-
-<!--    <div class="content">-->
-<!--      Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
-<!--      Phasellus nec iaculis mauris. <a>@bulmaio</a>.-->
-<!--    </div>-->
   </div>
 <% end %>
