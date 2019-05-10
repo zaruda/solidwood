@@ -25,7 +25,6 @@
 
 .news {
   &List {
-
     &Preview {
       display: flex;
       padding: 0 0 2rem;
@@ -35,7 +34,10 @@
       &:not(:last-child) {
         border-bottom: 1px solid #d8d8d8;
       }
-      &Image {
+      @media (max-width: $screen-mobile) {
+        display: block;
+      }
+        &Image {
         width: 270px;
         height: 180px;
         -webkit-background-size: cover;
@@ -48,6 +50,11 @@
           display: block;
           max-width: 220px;
           width: 100%;
+        }
+
+        @media (max-width: $screen-mobile) {
+          width: 100%;
+          margin-right: 0;
         }
       }
       .title {
