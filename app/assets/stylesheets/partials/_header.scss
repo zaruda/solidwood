@@ -59,6 +59,7 @@
       font-size: 1.4rem;
     }
     .phone {
+      margin-left: 10px;
       @media (max-width: $screen-desktop) {
         display: none;
       }

@@ -14,6 +14,9 @@
     </div>
     <div class="footerContacts">
       <%= link_to setting.phone, "tel:#{setting.phone.delete(' ')}", class: 'phone' %>
+      <% if setting.second_phone.present? %>
+        <%= link_to setting.second_phone, "tel:#{setting.second_phone.delete(' ')}", class: 'phone' %>
+      <% end %>
       <%= link_to setting.email, "mailto:#{setting.email}", class: 'email' %>
     </div>
   </div>

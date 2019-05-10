@@ -48,6 +48,9 @@ footer {
       }
       .phone {
         font-size: 2rem;
+        &:first-child {
+          margin-bottom: 20px;
+        }
       }
     }
   }

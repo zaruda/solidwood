@@ -8,6 +8,9 @@
     <div>
       <div class="headerContacts">
         <%= link_to setting.phone, "tel:#{setting.phone.delete(' ')}", class: 'phone' %>
+        <% if setting.second_phone.present? %>
+          <%= link_to setting.second_phone, "tel:#{setting.second_phone.delete(' ')}", class: 'phone' %>
+        <% end %>
         <button class="button-modal" data-target="callback">Заказать звонок</button>
         <div class="basketContainer"><%= render 'layouts/cart_text' %></div>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
