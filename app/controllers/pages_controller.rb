@@ -1,25 +1,18 @@
 require 'open-uri'
 
 class PagesController < InheritedResources::Base
-
-  def index
-    @page = Page.find_by_name(params[:page])
-  end
-
-  # def about
-  #   @page = Page.find_by_name('О нас')
-  # end
+  add_breadcrumb "Главная", '/'
 
   def calculator
+    add_breadcrumb 'Калькулятор', '/calculator'
+
     @page = Page.find_by_name('Калькулятор')
   end
 
   def delivery
-    @page = Page.find_by_name('Доставка и оплата')
-  end
+    add_breadcrumb 'Доставка', '/delivery'
 
-  def contacts
-    @page = Page.find_by_name('Контакты')
+    @page = Page.find_by_name('Доставка и оплата')
   end
 
   def sitemap

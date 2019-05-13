@@ -77,8 +77,6 @@
   <body>
     <%= render 'partials/header' %>
 
-    <%#= render_breadcrumbs :separator => ' / ' %>
-
     <main class="<%= current_page?(root_path) ? nil : 'withHeader'%>">
       <%= yield %>
     </main>

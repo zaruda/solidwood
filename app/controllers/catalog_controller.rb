@@ -1,8 +1,19 @@
 class CatalogController < ApplicationController
-  def index
-    # add_breadcrumb "Каталог", catalog_index_path
+  add_breadcrumb "Главная", '/'
+  add_breadcrumb "Каталог", '/catalog/product'
 
-    @products = if params[:filter] === 'service'
+  def index
+
+    filter_map = {
+      service: "Услуги",
+      product: "Продукция"
+    }
+
+    filter = params[:filter]
+
+    add_breadcrumb filter_map[:"#{filter}"], "/catalog/#{filter}"
+
+    @products = if filter === 'service'
       Service.all
     else
       ProductType.all

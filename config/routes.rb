@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/checkout', to: redirect('/checkout/step1')
   get '/products', to: redirect('/catalog/product')
 
-  get '/contacts' => 'pages#contacts'
+  get '/contacts' => 'contacts#index'
 
   get '/sitemap.xml' => 'pages#sitemap'
 
