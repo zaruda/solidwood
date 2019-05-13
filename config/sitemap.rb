@@ -11,11 +11,11 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new({
                                                                         fog_directory: ENV['DIGITALOCEAN_SPACE'],
                                                                         fog_region: 'ams3',
                                                                         fog_storage_options: {
-                                                                            endpoint: 'https://ams3.cdn.digitaloceanspaces.com'
+                                                                            endpoint: 'https://ams3.digitaloceanspaces.com'
                                                                         }
                                                                     })
 
-SitemapGenerator::Sitemap.sitemaps_host = "https://#{ENV['DIGITALOCEAN_SPACE']}.ams3.cdn.digitaloceanspaces.com"
+SitemapGenerator::Sitemap.sitemaps_host = "https://#{ENV['DIGITALOCEAN_SPACE']}.ams3.digitaloceanspaces.com"
 
 SitemapGenerator::Sitemap.create do
 
