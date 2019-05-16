@@ -2,6 +2,8 @@ ActiveAdmin.register Setting do
   permit_params :bank, :email, :phone, :second_phone, :about, :address
 
   form html: { enctype: "multipart/form-data" } do |f|
+    f.semantic_errors
+
     f.inputs do
       f.input :email
       f.input :phone

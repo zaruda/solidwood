@@ -102,6 +102,22 @@ Rails.application.configure do
   }
 
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    bucket: ENV["DIGITALOCEAN_SPACE"],
+    s3_credentials: {
+      access_key_id: ENV["DIGITALOCEAN_KEY_ID"],
+      secret_access_key: ENV["DIGITALOCEAN_SECRET"]
+    },
+    s3_host_name: "ams3.digitaloceanspaces.com",
+    s3_region: "ams3",
+    s3_protocol: :https,
+    s3_options: {
+      endpoint: "https://ams3.digitaloceanspaces.com",
+    },
+  }
+
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 

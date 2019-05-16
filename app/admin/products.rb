@@ -2,6 +2,7 @@ ActiveAdmin.register Product do
   permit_params :name, :price, :active, :image, :product_type_id, properties_attributes: [:id, :name, :value]
 
   form :html => { :enctype => "multipart/form-data" } do |f|
+    f.semantic_errors
     f.inputs do
       f.input :product_type
       f.input :name

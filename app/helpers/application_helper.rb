@@ -16,8 +16,4 @@ module ApplicationHelper
     content_for(:image) { url }
   end
 
-  def keywords(data)
-    content_for(:keywords) { data }
-  end
-
 end

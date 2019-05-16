@@ -1,5 +1,5 @@
 ActiveAdmin.register ProductType do
-  permit_params :name, :description, :meta_description, :price, :image, :keywords
+  permit_params :name, :description, :meta_description, :meta_title, :price, :image
 
   index do
     selectable_column
@@ -26,13 +26,17 @@ ActiveAdmin.register ProductType do
   end
 
   form :html => { :enctype => "multipart/form-data" } do |f|
-    f.inputs do
+    f.semantic_errors
+
+    f.inputs 'Контент' do
       f.input :name
       f.input :description, as: :ckeditor
-      f.input :meta_description
-      f.input :keywords
       f.input :price
       f.input :image, as: :file
+    end
+    f.inputs 'SEO' do
+      f.input :meta_title
+      f.input :meta_description
     end
     actions
   end

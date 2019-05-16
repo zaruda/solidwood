@@ -2,6 +2,8 @@ ActiveAdmin.register Service do
   permit_params :name, :description, :price, :image
 
   form html: { enctype: "multipart/form-data" } do |f|
+    f.semantic_errors
+
     f.inputs do
       f.input :name
       f.input :price
