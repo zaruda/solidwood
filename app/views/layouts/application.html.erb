@@ -19,11 +19,11 @@
     <%= csrf_meta_tags %>
 
     <% if yield(:title).present? %>
-      <title><%= yield(:title) %> | СолидВуд</title>
-      <meta property="og:title" content="<%= yield(:title) %> | СолидВуд" />
+      <title><%= yield(:title) %></title>
+      <meta property="og:title" content="<%= yield(:title) %>" />
       <% else %>
-        <title>Пиломатериалы от производителя | СолидВуд</title>
-        <meta property="og:title" content="Пиломатериалы от производителя | СолидВуд" />
+        <title>Пиломатериалы от производителя в Минске оптом и в розницу по низким ценам</title>
+        <meta property="og:title" content="Пиломатериалы от производителя в Минске оптом и в розницу по низким ценам" />
     <% end %>
 
     <% if yield(:description).present? %>
@@ -37,8 +37,6 @@
       <% else %>
       <meta property="og:image" content="<%= asset_path('favicon.jpg') %>" />
     <% end %>
-
-
 
 
     <% if Rails.env.production? %>
