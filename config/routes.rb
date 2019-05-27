@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
   get '/calculator' => 'pages#calculator'
   get '/delivery' => 'pages#delivery'
-  get '/catalog/:filter' => 'catalog#index'
+  get '/products', to: redirect('/catalog/product')
 
   get '/catalog', to: redirect('/catalog/product')
+
+  get '/catalog/:filter' => 'catalog#index'
+
   get '/checkout', to: redirect('/checkout/step1')
-  get '/products', to: redirect('/catalog/product')
 
   get '/contacts' => 'contacts#index'
 
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :news, only: [:index, :show]
   resources :products, only: [:index, :show]
-  resources :catalog, only: :index
+  # resources :catalog, only: :index
   resources :order_items, only: [:create, :update, :destroy]
   resource :contact
   resolve("Contact") {[:contact]}

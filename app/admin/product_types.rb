@@ -1,5 +1,5 @@
 ActiveAdmin.register ProductType do
-  permit_params :name, :description, :meta_description, :meta_title, :price, :image
+  permit_params :name, :description, :additional_text, :meta_description, :meta_title, :price, :image
 
   index do
     selectable_column
@@ -21,6 +21,9 @@ ActiveAdmin.register ProductType do
       row :description do |pt|
         raw(pt.description)
       end
+      row :footer_text do |pt|
+        raw(pt.additional_text)
+      end
     end
     active_admin_comments
   end
@@ -30,9 +33,10 @@ ActiveAdmin.register ProductType do
 
     f.inputs 'Контент' do
       f.input :name
-      f.input :description, as: :ckeditor
       f.input :price
       f.input :image, as: :file
+      f.input :description, as: :ckeditor
+      f.input :additional_text, as: :ckeditor
     end
     f.inputs 'SEO' do
       f.input :meta_title
