@@ -1,4 +1,4 @@
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   $capacityCalculator = $('.calculator#capacity')
   $countCaclulator = $('.calculator#count')
 

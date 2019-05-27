@@ -55,7 +55,7 @@
   return
 ) jQuery
 
-$(document).on 'turbolinks:load', ->
+$(document).ready ->
   $('.quantity').numberPicker()
   return
 

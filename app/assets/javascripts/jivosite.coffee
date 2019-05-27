@@ -33,7 +33,7 @@ runChat = ->
   ) document, 'script'
   return
 
-jQuery(document).on 'turbolinks:load', runChat
+jQuery(document).on 'ready', runChat
 jQuery(document).ready ($) ->
   runChat()
   return
