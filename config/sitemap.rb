@@ -1,21 +1,18 @@
 # Set the host name for URL creation
-require 'fog-aws'
+require 'aws-sdk'
 
 SitemapGenerator::Sitemap.default_host = ENV['HOST']
 SitemapGenerator::Sitemap.compress = false
 
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new({
-                                                                        fog_provider: 'AWS',
-                                                                        aws_access_key_id: ENV['DIGITALOCEAN_KEY_ID'],
-                                                                        aws_secret_access_key: ENV['DIGITALOCEAN_SECRET'],
-                                                                        fog_directory: ENV['DIGITALOCEAN_SPACE'],
-                                                                        fog_region: 'ams3',
-                                                                        fog_storage_options: {
-                                                                            endpoint: 'https://ams3.digitaloceanspaces.com'
-                                                                        }
-                                                                    })
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(ENV['AWS_BUCKET'],
+                                                                        aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                                                                        aws_secret_access_key: ENV['AWS_ACCESS_SECRET_KEY'],
+                                                                        aws_region: ENV['AWS_REGION']
+)
 
-SitemapGenerator::Sitemap.sitemaps_host = "https://#{ENV['DIGITALOCEAN_SPACE']}.ams3.digitaloceanspaces.com"
+SitemapGenerator::Sitemap.sitemaps_host = "https://#{ENV['AWS_CLOUDFRONT']}"
+
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 
 SitemapGenerator::Sitemap.create do
 

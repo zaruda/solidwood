@@ -46,6 +46,22 @@ Rails.application.configure do
     enable_starttls_auto: true,
   }
 
+
+  # paperclip settings
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV['AWS_BUCKET'],
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_ACCESS_SECRET_KEY'],
+      s3_region: ENV['AWS_REGION'],
+      s3_host_name: 's3-eu-central-1.amazonaws.com',
+    },
+    s3_host_alias: ENV['AWS_CLOUDFRONT'],
+    url: ':s3_alias_url',
+  }
+
+
   config.i18n.fallbacks = [I18n.default_locale]
 
   # Print deprecation notices to the Rails logger.
@@ -55,7 +71,7 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   # Store files locally.
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

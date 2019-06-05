@@ -104,19 +104,16 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     storage: :s3,
-    bucket: ENV["DIGITALOCEAN_SPACE"],
     s3_credentials: {
-      access_key_id: ENV["DIGITALOCEAN_KEY_ID"],
-      secret_access_key: ENV["DIGITALOCEAN_SECRET"]
+      bucket: ENV['AWS_BUCKET'],
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_ACCESS_SECRET_KEY'],
+      s3_region: ENV['AWS_REGION'],
+      s3_host_name: 's3-eu-central-1.amazonaws.com',
     },
-    s3_host_name: "ams3.digitaloceanspaces.com",
-    s3_region: "ams3",
-    s3_protocol: :https,
-    s3_options: {
-      endpoint: "https://ams3.digitaloceanspaces.com",
-    },
+    s3_host_alias: ENV['AWS_CLOUDFRONT'],
+    url: ':s3_alias_url',
   }
-
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new

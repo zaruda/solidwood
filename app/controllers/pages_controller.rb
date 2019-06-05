@@ -16,7 +16,7 @@ class PagesController < InheritedResources::Base
   end
 
   def sitemap
-    file = open("https://#{ENV['DIGITALOCEAN_SPACE']}.ams3.cdn.digitaloceanspaces.com/sitemap.xml")
+    file = open("https://#{ENV['AWS_CLOUDFRONT']}/sitemaps/sitemap.xml")
     render xml: file
   end
 
