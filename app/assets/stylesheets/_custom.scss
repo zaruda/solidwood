@@ -1,5 +1,13 @@
 @import "variables";
 
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 a.box:hover, a.box:focus {
   box-shadow: none;
 }
