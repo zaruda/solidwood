@@ -44,3 +44,18 @@
 #catalog {
   padding: 3rem 0;
 }
+
+.advantage {
+  text-align: center;
+  &Icon {
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 130px;
+    width: 100%;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+}

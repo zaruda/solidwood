@@ -50,7 +50,6 @@
                 <button type="button"></button>
               </div>
               <%= f.hidden_field :product_id, value: order_item.product.id %>
-              <%#= f.submit "Обновить", class: "button" %>
               <%= button_tag(type: "submit", class: "button-refresh") do %>
                 <%= image_tag 'refresh.svg', alt: 'Обновить' %>
               <% end %>
