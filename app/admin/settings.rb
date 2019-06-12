@@ -1,5 +1,6 @@
 ActiveAdmin.register Setting do
-  permit_params :bank, :email, :phone, :second_phone, :about, :address
+  permit_params :bank, :email, :phone, :second_phone, :about, :address,
+                :application_scope_content, :our_products_content, :about_lumber_content
 
   form html: { enctype: "multipart/form-data" } do |f|
     f.semantic_errors
@@ -10,8 +11,21 @@ ActiveAdmin.register Setting do
       f.input :second_phone
       f.input :bank
       f.input :address
+      f.input :about_lumber_content, as: :ckeditor
+      f.input :application_scope_content, as: :ckeditor
+      f.input :our_products_content, as: :ckeditor
       f.input :about, as: :ckeditor
     end
+    actions
+  end
+
+  index do
+    selectable_column
+    id_column
+    column :email
+    column :phone
+    column :bank
+    column :address
     actions
   end
 
@@ -19,7 +33,6 @@ ActiveAdmin.register Setting do
     attributes_table do
       row :email
       row :phone
-      row :second_phone
       row :bank
       row :address
       row :about do |setting|
