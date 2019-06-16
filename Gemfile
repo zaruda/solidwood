@@ -51,6 +51,7 @@ gem 'inherited_resources', '~> 1.9'
 gem 'paperclip', '~> 6.1'
 gem 'sitemap_generator', '~> 6.0', '>= 6.0.2'
 gem 'simple_form', '~> 4.1'
+gem 'lazyload-rails', '~> 0.5.0'
 gem 'whenever', '~> 0.10.0'
 
 group :development, :test do

@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery.lazyload
 //= require_tree .
 //= stub active_material/fonts

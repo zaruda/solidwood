@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
+
+  $("img").lazyload();
+
   header = $('header')
   $('.navbar-burger').click ->
     $(this).toggleClass 'is-active'
