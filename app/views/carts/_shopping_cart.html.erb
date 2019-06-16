@@ -51,7 +51,7 @@
               </div>
               <%= f.hidden_field :product_id, value: order_item.product.id %>
               <%= button_tag(type: "submit", class: "button-refresh") do %>
-                <%= image_tag 'refresh.svg', alt: 'Обновить' %>
+                <%= image_tag 'refresh.svg', alt: 'Обновить', lazy: true %>
               <% end %>
               <%= link_to '', order_item, { data: { confirm: "Вы уверены, что хотите удалить #{order_item.product.name} из корзины?" }, method: :delete, remote: true, class: "button-delete" } %>
             </div>

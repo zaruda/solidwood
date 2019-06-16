@@ -20,7 +20,7 @@
     <div class="column is-four-fifths">
       <% if @news.banner.attached? %>
         <div class="newsBanner" style="background-image: url(<%= @news.banner.service_url %>)">
-          <%= image_tag @news.banner.service_url %>
+          <%= image_tag @news.banner.service_url, lazy: true %>
         </div>
       <% end %>
 
