@@ -13,9 +13,14 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="yandex-verification" content="db04aeb648203af5" />
     <meta name="google-site-verification" content="G7AQ1r858Ifua5vR7OlnHNAVu-nkpt_0w9UCgz8mq90" />
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com">
+    <link rel="preconnect" href="https://code.jivosite.com">
+    <link rel="preconnect" href="https://cdn-cis.jivosite.com">
+
+
     <%= csrf_meta_tags %>
 
     <% if yield(:title).present? %>
