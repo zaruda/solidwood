@@ -8,8 +8,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   config.public_file_server.headers = {
-    'Cache-Control' => 'public, s-maxage=72000, max-age=36000',
-    'Expires' => "#{1.day.from_now.to_formatted_s(:rfc822)}"
+      'Cache-Control' => "public, must-revalidate, max-age=#{30.days.seconds.to_i}"
   }
 
   config.action_dispatch.default_headers = {
