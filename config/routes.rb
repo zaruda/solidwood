@@ -30,12 +30,6 @@ Rails.application.routes.draw do
   resource :contact
   resolve("Contact") {[:contact]}
 
-
-  # get '/cart/step1' => 'wizard#step1'
-  # get '/cart/step2' => 'wizard#step2'
-  # get '/cart/step3' => 'wizard#step3'
-
-
   resource :wizard, path: '/checkout' do
     get :step1
     get :step2
@@ -43,6 +37,10 @@ Rails.application.routes.draw do
 
     post :validate_step
   end
+
+  get "/404", to: "errors#not_found"
+  get "/422", to: "errors#unacceptable"
+  get "/500", to: "errors#internal_error"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

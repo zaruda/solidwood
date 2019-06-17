@@ -15,6 +15,9 @@
       font-size: 2.4rem;
     }
   }
+  &.clear {
+    background-image: none;
+  }
   @media (max-width: $screen-desktop) {
     -webkit-background-size: cover;
     background-size: cover;
