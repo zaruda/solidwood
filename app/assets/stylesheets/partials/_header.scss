@@ -14,10 +14,14 @@
   @media (max-width: $screen-mobile) {
     padding: 0.8rem 0;
   }
+
   &.white {
     background-color: #ffffff;
     a {
       color: #333;
+    }
+    .headerNav {
+      display: none;
     }
     .headerContacts {
       .basketContainer {
@@ -116,7 +120,7 @@
       &Item {
         position: relative;
         &:not(:last-child) {
-          margin-right: 2.5rem;
+          margin-right: 2.2rem;
         }
         > a {
           font-size: 1rem;

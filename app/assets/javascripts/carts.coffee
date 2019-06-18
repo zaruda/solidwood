@@ -57,6 +57,26 @@
 
 $(document).ready ->
   $('.quantity').numberPicker()
+
+  $('.add-to-cart').click ->
+    $('body').append('<div class="message is-primary notificationMessage">
+      <div class="message-header">
+        <p>Уведомление</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body">
+        Товар добавлен в корзину!
+      </div>
+    </div>
+    ');
+
+    if document.querySelectorAll('.message .delete').length > 0
+      for element,i in document.querySelectorAll('.message .delete')
+        do (element, i)->
+          $notification = element.closest('.message')
+          element.addEventListener 'click', ->
+            $notification.remove()
+            return
   return
 
 # ---

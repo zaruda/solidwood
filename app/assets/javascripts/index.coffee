@@ -20,7 +20,7 @@ $(document).ready ->
     return
 
   $('.modal-close').click ->
-    $(this).parent().removeClass 'is-active'
+    $(this).closest('.modal').removeClass 'is-active'
     $('html').removeClass 'is-clipped'
     return
 

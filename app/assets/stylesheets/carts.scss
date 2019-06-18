@@ -89,7 +89,7 @@
 }
 
 .button-link {
-  color: #075681;
+  color: $green;
   font-size: 1.2rem;
   padding: 0 1.25rem;
   @media (max-width: $screen-mobile) {
@@ -128,5 +128,19 @@
     > input {
       border-color: red;
     }
+  }
+}
+
+.notificationMessage {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  z-index: 999;
+  .message-header {
+    background-color: $green !important;
+  }
+  .message-body {
+    overflow: auto;
   }
 }
