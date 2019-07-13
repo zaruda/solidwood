@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery
+//= require jquery3
+//= require jquery_ujs
 //= require jquery.lazyload
 //= require_tree .
-//= stub active_admin
+//= stup active_admin
 //= stub active_material
