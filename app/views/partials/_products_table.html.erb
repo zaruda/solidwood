@@ -1,9 +1,11 @@
 <table class="table is-fullwidth productTable">
   <thead>
   <tr>
-    <% products.first.properties.order(:name).each do |prop| %>
-      <th> <%= prop.name %></th>
-    <% end %>
+    <th>Наименование</th>
+    <th>Сорт</th>
+    <th>Длина</th>
+    <th>Ед. измерения</th>
+    <th>Материал</th>
     <th>Стоимость</th>
     <th>Количество</th>
   </tr>
@@ -11,14 +13,25 @@
   <tbody>
   <% products.each do |prod| %>
     <tr>
-      <% prod.properties.order(:name).each do |property| %>
-        <td><%= property.value %></td>
-      <% end %>
+      <td>
+        <%= prod.name %> <%= prod.properties.select { |prop| prop.name === 'Сечение' }.first.value %>
+      </td>
+      <td>
+        <%= prod.properties.select { |prop| prop.name === 'Сорт' }.first.value %>
+      </td>
+      <td>
+        <%= prod.properties.select { |prop| prop.name === 'Длина' }.first.value %>
+      </td>
+      <td>
+        <%= prod.properties.select { |prop| prop.name === 'Ед. измерения' }.first.value %>
+      </td>
+      <td>
+        <%= prod.properties.select { |prop| prop.name === 'Материал' }.present? ? prod.properties.select { |prop| prop.name === 'Материал' }.first.value  : '' %>
+      </td>
       <td>
         <%= number_to_currency prod.price, locale: :by %>
       </td>
       <td>
-
         <%= form_for order_item, remote: true do |f| %>
           <%= f.hidden_field :product_id, value: prod.id %>
           <div class="productTableCart">
@@ -30,10 +43,8 @@
             <%= f.submit "В корзину", class: "button button-card add-to-cart" %>
           </div>
         <% end %>
-
       </td>
     </tr>
-
   <% end %>
   </tbody>
 </table>

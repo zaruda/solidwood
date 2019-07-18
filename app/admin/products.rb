@@ -13,7 +13,7 @@ ActiveAdmin.register Product do
     end
     f.has_many :properties,
                allow_destroy: true do |prop|
-      prop.input :name, as: :select, collection: ["Сечение", "Длина", "Сорт", "Ед. измерения"], include_blank: false
+      prop.input :name, as: :select, collection: ["Сечение", "Длина", "Сорт", "Ед. измерения", "Материал"], include_blank: false
       prop.input :value
     end
     actions
