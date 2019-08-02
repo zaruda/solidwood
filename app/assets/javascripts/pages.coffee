@@ -3,3 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+$(document).ready ->
+
+  $('.orderForm').submit ->
+    if typeof ym is 'function'
+      ym(53459359, 'reachGoal', 'oformlenye-zakaza')
+    return
+
+  return

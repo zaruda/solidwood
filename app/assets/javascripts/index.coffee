@@ -38,5 +38,16 @@ $(document).ready ->
     else
       header.removeClass 'white'
     return
+
+
+  #  SEO
+  callbackButton = $('.button-modal[data-target="callback"]')
+  callbackButton.click ->
+    if typeof ym is 'function'
+      ym(53459359, 'reachGoal', 'clik-zakazat-zvonok')
+    return
+  #    SEO END
+
+
   return
 
