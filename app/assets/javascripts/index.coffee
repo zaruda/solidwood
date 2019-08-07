@@ -46,6 +46,11 @@ $(document).ready ->
     if typeof ym is 'function'
       ym(53459359, 'reachGoal', 'clik-zakazat-zvonok')
     return
+
+  $('.orderForm').submit ->
+    if typeof ym is 'function'
+      ym(53459359, 'reachGoal', 'oformlenye-zakaza')
+    return
   #    SEO END
 
 
