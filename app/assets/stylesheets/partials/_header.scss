@@ -117,6 +117,7 @@
     }
     &Menu {
       display: flex;
+      list-style-type: none;
       &Item {
         position: relative;
         &:not(:last-child) {

@@ -1,5 +1,5 @@
 ActiveAdmin.register Setting do
-  permit_params :bank, :email, :phone, :second_phone, :about, :address,
+  permit_params :bank, :email, :phone, :second_phone, :about, :address, :pricelist,
                 :application_scope_content, :our_products_content, :about_lumber_content
 
   form html: { enctype: "multipart/form-data" } do |f|
@@ -15,6 +15,7 @@ ActiveAdmin.register Setting do
       f.input :application_scope_content, as: :ckeditor
       f.input :our_products_content, as: :ckeditor
       f.input :about, as: :ckeditor
+      f.input :pricelist, as: :file
     end
     actions
   end
