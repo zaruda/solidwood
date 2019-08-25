@@ -47,7 +47,7 @@ $(document).ready ->
       ym(53459359, 'reachGoal', 'clik-zakazat-zvonok')
     return
 
-  $('.orderForm').submit ->
+  $('.new_order_wizard > input[value="Оформить заказ"]').click ->
     if typeof ym is 'function'
       ym(53459359, 'reachGoal', 'oformlenye-zakaza')
     return
