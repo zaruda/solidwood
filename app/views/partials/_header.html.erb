@@ -24,14 +24,23 @@
           <li class="headerNavMenuItem">
             <%= link_to "Каталог", '/catalog/product' %>
             <div class="dropdownMenu">
-              <ul class="dropdownMenuList">
+              <ul class="dropdownMenuList col-2">
                 <% product_types.each do |product| %>
                   <li><%= link_to product.name, product_path(product) %></li>
                 <% end %>
               </ul>
             </div>
           </li>
-          <li class="headerNavMenuItem"><%= link_to "Услуги", '/catalog/service' %></li>
+          <li class="headerNavMenuItem">
+            <%= link_to "Услуги", '/catalog/service' %>
+            <div class="dropdownMenu">
+              <ul class="dropdownMenuList col-1">
+                <% services.each_with_index do |service, idx| %>
+                  <li><%= link_to service.name, "/catalog/service#s_#{idx}" %></li>
+                <% end %>
+              </ul>
+            </div>
+          </li>
           <li class="headerNavMenuItem">
             <%= link_to "Прайс-лист", rails_blob_path(setting.pricelist, disposition: 'attachment') %>
           </li>

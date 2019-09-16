@@ -146,7 +146,12 @@
           z-index: -3;
           opacity: 0;
           &List {
-            column-count: 2;
+            &.col-2 {
+              column-count: 2;
+            }
+            &.col-1 {
+              column-count: 1;
+            }
             li {
               a {
                 display: block;

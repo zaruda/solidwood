@@ -1,4 +1,4 @@
-<div class="serviceListItem">
+<div class="serviceListItem" id="s_<%= service.id %>">
   <% if service.image.attached? %>
     <%= image_tag service.image.service_url, alt: service.name %>
   <% end %>
