@@ -1,6 +1,8 @@
 class NewsController < InheritedResources::Base
   add_breadcrumb "Главная", '/'
 
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+
   def index
     add_breadcrumb "Новости", news_index_path
 
@@ -20,8 +22,13 @@ class NewsController < InheritedResources::Base
 
   private
 
-    def news_params
-      params.require(:news).permit(:title, :intro, :body, :published_at)
-    end
+  def set_item
+    @item = News.friendly.find(params[:id])
+    redirect_to action: action_name, id: @item.friendly_id, status: 301 unless @item.friendly_id == params[:id]
+  end
+
+  def news_params
+    params.require(:news).permit(:title, :intro, :body, :published_at)
+  end
 end
 
