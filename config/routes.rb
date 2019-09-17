@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get '/catalog', to: redirect('/catalog/product')
 
-  get '/catalog/:filter' => 'catalog#index'
+  get '/catalog/:filter', to: 'catalog#index', constraints: { filter: /service|product/ }
 
   get '/checkout', to: redirect('/checkout/step1')
 
