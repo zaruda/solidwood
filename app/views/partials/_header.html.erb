@@ -44,9 +44,10 @@
           <li class="headerNavMenuItem">
             <%= link_to "Прайс-лист", rails_blob_path(setting.pricelist, disposition: 'attachment') %>
           </li>
-          <li class="headerNavMenuItem"><%= link_to "Калькулятор объемов", '/calculator' %></li>
+          <li class="headerNavMenuItem"><%= link_to "Калькулятор", '/calculator' %></li>
           <li class="headerNavMenuItem"><%= link_to "Новости", news_index_path %></li>
-          <li class="headerNavMenuItem"><%= link_to "Доставка и оплата", '/delivery' %></li>
+          <li class="headerNavMenuItem"><%= link_to "FAQ", faq_path %></li>
+          <li class="headerNavMenuItem"><%= link_to "Доставка", '/delivery' %></li>
           <li class="headerNavMenuItem"><%= link_to "Контакты", '/contacts' %></li>
         </ul>
       </nav>
@@ -62,9 +63,10 @@
       <li class="sidebarNavMenuItem">
         <%= link_to "Прайс-лист", rails_blob_path(setting.pricelist, disposition: 'attachment') %>
       </li>
-      <li class="sidebarNavMenuItem"><%= link_to "Калькулятор объемов", '/calculator' %></li>
+      <li class="sidebarNavMenuItem"><%= link_to "Калькулятор", '/calculator' %></li>
       <li class="sidebarNavMenuItem"><%= link_to "Новости", news_index_path %></li>
-      <li class="sidebarNavMenuItem"><%= link_to "Доставка и оплата", '/delivery' %></li>
+      <li class="sidebarNavMenuItem"><%= link_to "FAQ", faq_path %></li>
+      <li class="sidebarNavMenuItem"><%= link_to "Доставка", '/delivery' %></li>
       <li class="sidebarNavMenuItem"><%= link_to "Контакты", '/contacts' %></li>
     </ul>
   </nav>

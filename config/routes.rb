@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   get '/contacts' => 'contacts#index'
 
+  get 'faq' => 'faq#index'
+
+
   get '/sitemap.xml' => 'pages#sitemap'
 
   resources :news, only: [:index, :show]

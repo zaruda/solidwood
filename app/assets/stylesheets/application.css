@@ -15,6 +15,7 @@
  *= require _fonts
  *= require normalize
  *= require bulma
+ *= require bulma-extensions
  *= require partials/_header
  *= require partials/_footer
  *= require_tree .

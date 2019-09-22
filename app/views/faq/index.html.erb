@@ -1,0 +1,33 @@
+<% title @page.title %>
+<% description @page.description %>
+
+<div class="container">
+  <%= render_breadcrumbs %>
+  <br />
+  <br />
+  <h1 class="title">Вопросы и ответы</h1>
+</div>
+<hr />
+
+<div class="container">
+  <p><%= raw(@page.body) %></p>
+
+  <section class="accordions">
+    <% @faqs.each_with_index do |faq, index| %>
+        <article class="accordion <%= index == 0 ? 'is-active' : '' %>">
+          <div class="accordion-header toggle">
+            <p><%= index+1 %>. <%= faq.question %></p>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <%= raw(faq.answer)%>
+            </div>
+          </div>
+        </article>
+    <% end %>
+  </section>
+</div>
+
+<br>
+<br>
+<br>

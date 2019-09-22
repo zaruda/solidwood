@@ -14,6 +14,8 @@
 //= require jquery3
 //= require jquery_ujs
 //= require jquery.lazyload
+//= require bulma-accordion
+
 //= require_tree .
 //= stup active_admin
 //= stub active_material
