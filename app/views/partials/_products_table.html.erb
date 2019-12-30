@@ -32,19 +32,22 @@
       <td>
         <%= number_to_currency prod.price, locale: :by %>
       </td>
-      <td>
+   
         <%= form_for order_item, remote: true do |f| %>
           <%= f.hidden_field :product_id, value: prod.id %>
+          <td>
           <div class="productTableCart">
             <div class="quantity horiz">
               <button type="button"></button>
               <%= f.number_field :quantity, min: 1, max: 1000 %>
               <button type="button"></button>
             </div>
-            <%= f.submit "В корзину", class: "button button-card add-to-cart" %>
+            </td>
           </div>
+            <td>
+            <%= f.submit "В корзину", class: "button button-card add-to-cart" %>
+    </td>
         <% end %>
-      </td>
     </tr>
   <% end %>
   </tbody>
