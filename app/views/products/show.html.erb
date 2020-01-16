@@ -23,10 +23,8 @@
         <% end %>
       </figure>
     </div>
-    <div class="column">
-      <p itemprop="description">
-        <%= raw(@product_type.description).html_safe %>
-      </p>
+    <div class="column" itemprop="description">
+      <%= raw(@product_type.description).html_safe %>
     </div>
   </div>
   <div id="product-prices-container" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
