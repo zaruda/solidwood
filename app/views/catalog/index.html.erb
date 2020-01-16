@@ -41,7 +41,7 @@
         </div>
       <% end %>
     </div>
-    <p><%= raw(@page.body) %></p>
+    <p><%= raw(@page.body).html_safe %></p>
   <% end %>
 
   <div class="spacer"></div>

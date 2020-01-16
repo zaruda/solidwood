@@ -12,7 +12,7 @@
 <hr />
 
 <div class="container">
-  <p><%= raw(@page.body) %></p>
+  <p><%= raw(@page.body).html_safe %></p>
 
   <section class="accordions">
     <% @faqs.each_with_index do |faq, index| %>
@@ -22,7 +22,7 @@
           </div>
           <div class="accordion-body">
             <div class="accordion-content">
-              <%= raw(faq.answer)%>
+              <%= raw(faq.answer).html_safe %>
             </div>
           </div>
         </article>

@@ -24,8 +24,8 @@
       </figure>
     </div>
     <div class="column">
-      <p>
-        <%= raw(@product_type.description) %>
+      <p itemprop="description">
+        <%= raw(@product_type.description).html_safe %>
       </p>
     </div>
   </div>
@@ -40,7 +40,7 @@
     <%= render 'partials/products_table', products: @product_type.products, order_item: @order_item %>
   <% end %>
   <p>
-    <%= raw(@product_type.additional_text) %>
+    <%= raw(@product_type.additional_text).html_safe %>
   </p>
 
   <div class="spacer-small"></div>

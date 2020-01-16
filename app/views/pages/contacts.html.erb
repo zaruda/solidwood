@@ -22,7 +22,7 @@
             <li>
               <%= image_tag 'pin.svg' %>
               <div itemprop="address">
-                <%= raw(setting.address) %>
+                <%= raw(setting.address).html_safe %>
               </div>
             </li>
             <li>
@@ -54,7 +54,7 @@
     </div>
   </div>
   <p>
-    <%= raw(@page.body) %>
+    <%= raw(@page.body).html_safe %>
   </p>
   <div class="spacer"></div>
 </div>

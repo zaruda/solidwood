@@ -6,7 +6,7 @@
       </div>
       <div class="address">
         <p>
-          <%= raw(setting.address) %>
+          <%= raw(setting.address).html_safe %>
         </p>
         <span class="button-modal" data-target="map">Показать на карте</span>
         <span class="button-modal" data-target="about">О нас</span>

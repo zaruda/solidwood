@@ -36,7 +36,7 @@
       </h1>
 
       <div>
-        <%= raw(@news.body) %>
+        <%= raw(@news.body).html_safe %>
       </div>
     </div>
     <div class="column">
