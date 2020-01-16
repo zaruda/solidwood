@@ -8,7 +8,9 @@
 <% end %>
 
 <div class="container">
-  <%= render_breadcrumbs %>
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+    <%= render_breadcrumbs builder: Breadcrumbs::MicrodataBuilder %>
+  </ol>
   <br />
   <br />
   <h1 class="title">Новости</h1>

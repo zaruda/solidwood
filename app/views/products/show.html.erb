@@ -5,14 +5,14 @@
   <% image @product_type.image.service_url %>
 <% end %>
 
-<div class="container">
-  <%= render_breadcrumbs %>
+<div class="container is-overflow-mobile" itemscope itemtype="http://schema.org/Product">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+    <%= render_breadcrumbs builder: Breadcrumbs::MicrodataBuilder %>
+  </ol>
   <br>
   <br>
-  <h1 class="title"><%= @product_type.name %></h1>
-</div>
+  <h1 class="title" itemprop="name"><%= @product_type.name %></h1>
 <hr />
-<div class="container is-overflow-mobile" >
   <div class="columns">
     <div class="column is-one-quarter">
       <figure class="image is-square">
@@ -29,6 +29,13 @@
       </p>
     </div>
   </div>
+  <div id="product-prices-container" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+        <meta itemprop="priceCurrency" content="BYN">
+        <span style="display:none" itemprop="lowPrice"><%= @product_type.products.minimum('price') %></span>
+        <span style="display:none" itemprop="highPrice"><%= @product_type.products.maximum('price') %></span>
+        <link itemprop="availability" href="http://schema.org/InStock">
+  </div>
+
   <% if @product_type.products.length > 0 %>
     <%= render 'partials/products_table', products: @product_type.products, order_item: @order_item %>
   <% end %>

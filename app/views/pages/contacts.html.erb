@@ -2,7 +2,9 @@
 <% description @page.description %>
 
 <div class="container">
-  <%= render_breadcrumbs %>
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+    <%= render_breadcrumbs builder: Breadcrumbs::MicrodataBuilder %>
+  </ol>
   <br />
   <br />
   <h1 class="title">Контакты</h1>
@@ -11,23 +13,27 @@
 <div class="container">
   <div class="columns">
     <div class="column is-four-fifths">
-
       <div class="columns">
         <div class="column">
-          <ul class="contactList">
+          <ul class="contactList" itemscope itemtype="http://schema.org/Organization">
+            <li style="display: none;">
+              <span itemprop="name">СолидВуд</span>
+            </li>
             <li>
               <%= image_tag 'pin.svg' %>
-              <div>
+              <div itemprop="address">
                 <%= raw(setting.address) %>
               </div>
             </li>
             <li>
               <%= image_tag 'phone.svg' %>
-              <div><%= link_to setting.phone, "tel:#{setting.phone.delete(' ')}" %></div>
+              <div itemprop="telephone">
+                <%= link_to setting.phone, "tel:#{setting.phone.delete(' ')}" %>
+              </div>
             </li>
             <li>
               <%= image_tag 'envelop.svg' %>
-              <div>
+              <div itemprop="email">
                 <%= link_to setting.email, "mailto:#{setting.email}" %>
               </div>
             </li>

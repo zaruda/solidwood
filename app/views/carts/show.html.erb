@@ -1,4 +1,6 @@
-<%= render_breadcrumbs %>
+<ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+  <%= render_breadcrumbs builder: Breadcrumbs::MicrodataBuilder %>
+</ol>
 
 <div class="shopping-cart">
   <%= render "shopping_cart" %>
