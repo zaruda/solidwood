@@ -1,17 +1,12 @@
 require 'open-uri'
 
 class PagesController < InheritedResources::Base
-  add_breadcrumb "Главная", '/'
 
   def calculator
-    add_breadcrumb 'Калькулятор', '/calculator'
-
     @page = Page.find_by_name('Калькулятор')
   end
 
   def delivery
-    add_breadcrumb 'Доставка', '/delivery'
-
     @page = Page.find_by_name('Доставка и оплата')
   end
 

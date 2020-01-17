@@ -5,12 +5,8 @@
   <% title "Услуги деревообработки в Минске по низким ценам" %>
   <% description "Услуги деревообработки в Минске. Распил на давальческом сырье. Распил по спецификациям заказчика. Антисептирование изделий. Доставка по Беларуси." %>
 <% end %>
+<% breadcrumb :catalog, current_page?('/catalog/service') %>
 
-<div class="container">
-  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
-    <%= render_breadcrumbs builder: MicrodataBreadcrumbs::Microdata::Builder %>
-  </ol>
-</div>
 <br />
 
 <div class="border-bottom">

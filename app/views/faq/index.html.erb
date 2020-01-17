@@ -1,10 +1,8 @@
 <% title @page.title %>
 <% description @page.description %>
+<% breadcrumb :faq %>
 
 <div class="container">
-  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
-    <%= render_breadcrumbs builder: MicrodataBreadcrumbs::Microdata::Builder %>
-  </ol>
   <br />
   <br />
   <h1 class="title">Вопросы и ответы</h1>

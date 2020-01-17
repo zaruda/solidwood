@@ -81,6 +81,7 @@
     <%= render 'partials/header' %>
 
     <main class="<%= current_page?(root_path) ? nil : 'withHeader'%>">
+      <%= render 'partials/breadcrumbs' %>
       <%= yield %>
     </main>
 

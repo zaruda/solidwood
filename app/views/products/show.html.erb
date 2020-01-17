@@ -4,11 +4,9 @@
 <% if @product_type.image.attached? %>
   <% image @product_type.image.service_url %>
 <% end %>
+<% breadcrumb :product, @product_type %>
 
 <div class="container is-overflow-mobile" itemscope itemtype="http://schema.org/Product">
-  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
-    <%= render_breadcrumbs builder: MicrodataBreadcrumbs::Microdata::Builder %>
-  </ol>
   <br>
   <br>
   <h1 class="title" itemprop="name"><%= @product_type.name %></h1>

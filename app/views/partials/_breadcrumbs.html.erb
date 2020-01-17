@@ -1,0 +1,21 @@
+<div class="container">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
+    <% breadcrumbs do |links| %>
+      <% if links.any? %>
+        <% links.each_with_index do |link, index| %>
+          <li class="breadcrumbs__item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+            <%= link_to link.url, rel: 'nofollow', itemprop: 'item' do %>
+                    <span itemprop="name">
+                      <%= link.text %>
+                    </span>
+              <meta itemprop="position" content="<%= index + 1 %>">
+            <% end %>
+            <% if links.length != index + 1 %>
+              &rsaquo;
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ol>
+</div>

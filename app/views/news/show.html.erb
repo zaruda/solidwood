@@ -6,11 +6,9 @@
 <% if @news.banner.attached? %>
   <% image @news.banner.service_url %>
 <% end %>
+<% breadcrumb :news_item, @news %>
 
 <div class="container">
-  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
-    <%= render_breadcrumbs builder: MicrodataBreadcrumbs::Microdata::Builder %>
-  </ol>
   <br />
   <br />
   <h1 class="title">Новости</h1>
