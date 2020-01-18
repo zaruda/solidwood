@@ -1,7 +1,7 @@
 <div class="container">
-  <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
-    <% breadcrumbs do |links| %>
-      <% if links.any? %>
+  <% breadcrumbs do |links| %>
+    <% if links.any? %>
+      <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
         <% links.each_with_index do |link, index| %>
           <li class="breadcrumbs__item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
             <%= link_to link.url, rel: 'nofollow', itemprop: 'item' do %>
@@ -15,7 +15,7 @@
             <% end %>
           </li>
         <% end %>
-      <% end %>
+      </ol>
     <% end %>
-  </ol>
+  <% end %>
 </div>
