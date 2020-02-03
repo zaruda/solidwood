@@ -62,21 +62,3 @@
   }
 
 }
-
-.modal#about,
-.modal#map {
-  .modal-content {
-    overflow: visible;
-  }
-  .modal-close {
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    z-index: 999;
-    @media (max-width: $screen-mobile) {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-    }
-  }
-}
