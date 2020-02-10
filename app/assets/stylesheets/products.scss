@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "mixins";
+@import "variables";
 
 .is-overflow-mobile {
   @media (max-width: 768px) {
@@ -182,4 +183,23 @@
 
 input[type="button"] {
   cursor: pointer
+}
+
+.ask-question {
+  display: block;
+  padding: 10px 20px;
+  max-width: max-content;
+  width: 100%;
+  margin: auto;
+  background-color: $green;
+  color: white;
+  text-align: center;
+  font-size: 1.125rem;
+  cursor: pointer;
+  border-radius: 7px;
+  box-shadow: 0 0 20px -7px $green;
+  transition: box-shadow .25s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 20px -4px $green;
+  }
 }
