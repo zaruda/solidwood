@@ -6,6 +6,7 @@ ActiveAdmin.register ProductType do
     id_column
     column :name
     column :price
+    column :active
     actions
   end
 

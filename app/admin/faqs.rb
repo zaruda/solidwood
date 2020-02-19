@@ -1,6 +1,16 @@
 ActiveAdmin.register Faq do
   permit_params :question, :answer
 
+  index do
+    selectable_column
+    id_column
+    column :question
+    column :answer do |a|
+      raw(a.answer.truncate_words(30))
+    end
+    actions
+  end
+
   form do |f|
     f.semantic_errors
 
