@@ -1,5 +1,5 @@
 ActiveAdmin.register ProductType do
-  permit_params :name, :description, :additional_text, :meta_description, :meta_title, :price, :image
+  permit_params :name, :description, :additional_text, :meta_description, :meta_title, :price, :image, :active
 
   index do
     selectable_column
@@ -13,6 +13,7 @@ ActiveAdmin.register ProductType do
     attributes_table do
       row :name
       row :price
+      row :active
       row :image do |pt|
         if pt.image.attached? and Rails.env.production?
           image_tag pt.image.service_url, class: 'img-responsive'
@@ -34,6 +35,7 @@ ActiveAdmin.register ProductType do
     f.inputs 'Контент' do
       f.input :name
       f.input :price
+      f.input :active
       f.input :image, as: :file
       f.input :description, as: :ckeditor
       f.input :additional_text, as: :ckeditor

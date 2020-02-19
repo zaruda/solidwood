@@ -6,6 +6,8 @@ class ProductType < ApplicationRecord
   has_one_attached :image
   before_save :proceed_templates
 
+  scope :active, -> { where(active: true) }
+
   def questions_left_template
     '
     <div class="button-modal ask-question" data-target="callback">
@@ -20,8 +22,13 @@ class ProductType < ApplicationRecord
   end
 
   def proceed_templates
-    self.additional_text.gsub!('[questions-left]', questions_left_template)
-    self.description.gsub!('[questions-left]', questions_left_template)
+    if self.additional_text.include? '[questions-left]'
+      self.additional_text.gsub!('[questions-left]', questions_left_template)
+    end
+
+    if self.description.include? '[questions-left]'
+      self.description.gsub!('[questions-left]', questions_left_template)
+    end
   end
 
 end

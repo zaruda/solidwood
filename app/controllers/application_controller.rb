@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   end
 
   def product_types
-    @product_types = ProductType.all
+    @product_types = ProductType.active
   end
 
 end
