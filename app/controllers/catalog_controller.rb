@@ -3,7 +3,7 @@ class CatalogController < ApplicationController
     @products = if params[:filter] === 'service'
       Service.all
     else
-      ProductType.all
+      ProductType.active
                 end
 
     @page = Page.find_by_name('Каталог')
