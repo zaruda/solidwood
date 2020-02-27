@@ -18,7 +18,7 @@ SitemapGenerator::Sitemap.create do
 
   @news = News.published
 
-  @products = ProductType.all
+  @products = ProductType.active
 
   add '/delivery'
   add '/calculator'
