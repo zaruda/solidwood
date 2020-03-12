@@ -1,5 +1,5 @@
 <div class="container">
-  <% breadcrumbs do |links| %>
+  <% breadcrumbs.tap do |links| %>
     <% if links.any? %>
       <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">
         <% links.each_with_index do |link, index| %>

@@ -25,16 +25,20 @@
   <% if current_page?('/catalog/service') %>
     <div class="serviceList">
       <% @products.each do |product| %>
-        <%= render "products/service_row", service: product %>
+        <% cache product do %>
+          <%= render "products/service_row", service: product %>
+        <% end %>
       <% end %>
     </div>
 
     <% else %>
     <div class="columns is-multiline">
       <% @products.each do |product| %>
-        <div class="column is-one-quarter">
-          <%= render "products/product_card", product: product, order_item: @order_item %>
-        </div>
+        <% cache product do %>
+          <div class="column is-one-quarter">
+            <%= render "products/product_card", product: product, order_item: @order_item %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <p><%= raw(@page.body).html_safe %></p>
