@@ -21,21 +21,21 @@
         <% end %>
       </figure>
     </div>
-    <div class="column" itemprop="description">
+    <div class="productDescription column" itemprop="description">
       <%= raw(@product_type.description).html_safe %>
     </div>
   </div>
   <div id="product-prices-container" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
-        <meta itemprop="priceCurrency" content="BYN">
-        <span style="display:none" itemprop="lowPrice"><%= @product_type.products.minimum('price') %></span>
-        <span style="display:none" itemprop="highPrice"><%= @product_type.products.maximum('price') %></span>
-        <link itemprop="availability" href="http://schema.org/InStock">
+    <meta itemprop="priceCurrency" content="BYN">
+    <span style="display:none" itemprop="lowPrice"><%= @product_type.products.minimum('price') %></span>
+    <span style="display:none" itemprop="highPrice"><%= @product_type.products.maximum('price') %></span>
+    <link itemprop="availability" href="http://schema.org/InStock">
   </div>
 
   <% if @product_type.products.length > 0 %>
     <%= render 'partials/products_table', products: @product_type.products, order_item: @order_item %>
   <% end %>
-  <p>
+  <p class="productDescription">
     <%= raw(@product_type.additional_text).html_safe %>
   </p>
 
