@@ -5,11 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.5.1'
+ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
@@ -33,7 +33,7 @@ gem 'redis', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #
-gem "active_material", github: "vigetlabs/active_material"
+gem 'active_material', '~> 1.5', '>= 1.5.2'
 gem 'activeadmin', '~> 1.4', '>= 1.4.3'
 
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
@@ -49,7 +49,6 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'gretel'
 gem 'inherited_resources', '~> 1.9'
-gem 'paperclip', '~> 6.1'
 gem 'sitemap_generator', '~> 6.0', '>= 6.0.2'
 gem 'simple_form', '~> 4.1'
 gem 'jquery-slick-rails', '~> 1.9'
@@ -59,9 +58,6 @@ gem 'whenever', '~> 0.10.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
 end
 
 group :development do
