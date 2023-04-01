@@ -1,12 +1,7 @@
-class Ckeditor::AttachmentFile < Ckeditor::Asset
-  has_attached_file :data,
-                    path: '/attachments/:id/:filename',
-                    s3_host_alias: ENV['AWS_CLOUDFRONT'],
-                    url: ':s3_alias_url'
+# frozen_string_literal: true
 
-  validates_attachment_presence :data
-  validates_attachment_size :data, less_than: 100.megabytes
-  do_not_validate_attachment_file_type :data
+class Ckeditor::AttachmentFile < Ckeditor::Asset
+  # for validation, see https://github.com/igorkasyanchuk/active_storage_validations
 
   def url_thumb
     @url_thumb ||= Ckeditor::Utils.filethumb(filename)

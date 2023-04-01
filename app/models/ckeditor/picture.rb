@@ -1,15 +1,13 @@
-class Ckeditor::Picture < Ckeditor::Asset
-  has_attached_file :data,
-                    path: '/pictures/:id/:style_:basename.:extension',
-                    s3_host_alias: ENV['AWS_CLOUDFRONT'],
-                    url: ':s3_alias_url',
-                    styles: { content: '800>', thumb: '118x100#' }
+# frozen_string_literal: true
 
-  validates_attachment_presence :data
-  validates_attachment_size :data, less_than: 2.megabytes
-  validates_attachment_content_type :data, content_type: /\Aimage/
+class Ckeditor::Picture < Ckeditor::Asset
+  # for validation, see https://github.com/igorkasyanchuk/active_storage_validations
 
   def url_content
-    url(:content)
+    rails_representation_url(storage_data.variant(resize: '800>').processed, only_path: true)
+  end
+
+  def url_thumb
+    rails_representation_url(storage_data.variant(resize: '118x100').processed, only_path: true)
   end
 end

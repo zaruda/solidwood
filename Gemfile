@@ -9,7 +9,8 @@ ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record
-gem 'pg'
+# gem 'pg'
+gem 'mysql2', '~> 0.5.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
@@ -42,7 +43,7 @@ gem 'aws-sdk-s3', '~> 1.30', '>= 1.30.1'
 gem 'babosa', '~> 1.0', '>= 1.0.2'
 gem 'bulma-rails', '~> 0.7.2'
 gem 'bulma-extensions-rails'
-gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'ckeditor', '~> 5.1', '>= 5.1.1'
 gem 'devise', '~> 4.5'
 gem 'fog-aws'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
@@ -54,6 +55,7 @@ gem 'simple_form', '~> 4.1'
 gem 'jquery-slick-rails', '~> 1.9'
 gem 'lazyload-rails', '~> 0.5.0'
 gem 'whenever', '~> 0.10.0'
+gem "mini_magick"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

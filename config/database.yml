@@ -18,7 +18,12 @@ default: &default
   host: localhost
 
 development:
-  url: <%= ENV['DATABASE_URL'] %>
+  # <<: *default
+  url: postgres://localhost/solidwood
+  # url: postgres://poifoypctpkjjo:589fb7c7f88dbd561009f1aa0692499d795635173ca83bfcf879ce90b7868d8e@ec2-52-215-68-14.eu-west-1.compute.amazonaws.com:5432/d1e514jv8sj6ct
+  # url: postgres://postgres:postgres@solidwood-db.c0et4fmg4lhj.eu-central-1.rds.amazonaws.com:5432/solidwood-db
+  # url: postgres://jcifwdcnvvtpmy:e3259652330bd04ce7695efa7dbcefa35c66c62fcd6cdcb44b292439306c1c56@ec2-34-242-199-141.eu-west-1.compute.amazonaws.com:5432/da7239nnpepmjo
+  # url: <%= ENV['DATABASE_URL'] %>
 
 
 # Warning: The database defined as "test" will be erased and
