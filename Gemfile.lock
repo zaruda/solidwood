@@ -1568,6 +1568,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     puma (3.12.6)
     racc (1.6.2)
@@ -1666,6 +1668,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   active_material (~> 1.5, >= 1.5.2)
